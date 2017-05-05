@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>体检信息</title>
+	<style>
+		@media screen and (min-width: 320px) {
+		    html {font-size: 14px;}
+		}
+		 
+		@media screen and (min-width: 360px) {
+		    html {font-size: 16px;}
+		}
+		 
+		@media screen and (min-width: 400px) {
+		    html {font-size: 18px;}
+		}
+		 
+		@media screen and (min-width: 440px) {
+		    html {font-size: 20px;}
+		}
+		 
+		@media screen and (min-width: 480px) {
+		    html {font-size: 24px;}
+		}
+		 
+		@media screen and (min-width: 640px) {
+		    html {font-size: 30px;}
+		}
+		body,html{
+			margin: 0px;
+			padding: 0px;
+			height:100%; 
+			overflow: hidden;
+		}
+		.container-fluid {
+			margin: 0px;
+			padding: 0px;
+			height:100%; 
+		}
+		
+		.text-left {
+			text-align: left;
+		}
+		.text-right {
+			text-align: right;
+		}
+		.text-center {
+			text-align: center;
+		}
+		button:active {
+            box-shadow: 2px 4px 10px #000;
+        }
+		
+		::-webkit-input-placeholder {
+			color: #FFF;
+			font-size: 1rem;
+		}
+		::-moz-placeholder {
+			color: #FFF;
+			font-size: 1rem;
+		}
+		.marginTop5{
+			margin-top: 7px;
+		}
+		.marginTop10{
+			margin-top: 10px;
+			display: inline-block;
+			letter-spacing: 3px;
+		}
+		.margin0{
+			margin:0px;
+		}
+		
+		.inlineBlock{
+			display:inline-block;
+		}
+		.header{
+			background:-moz-linear-gradient(left,#8ACA38,#5FA835);
+			background:-webkit-linear-gradient(left,#8ACA38,#5FA835);
+			background:linear-gradient(left,#8ACA38,#5FA835);
+			padding: 0px 15px;
+			height: 40px;
+			display:flex;
+			display:-webkit-flex;
+		}
+		.headerItem1{
+			flex:1;
+			display: inline-block;
+		}
+		.headerItem3{
+			flex:3;
+			color: #FFF;
+			font-size: 1.1rem;
+			margin-bottom: 0px;
+			font-weight: 700;
+			display: inline-block;
+		}
+		.content{
+			height: auto;
+			width: 100%;
+			background-color: #F1F1F1;
+			overflow-y:auto; 
+			position: absolute;
+			top: 40px;
+			bottom:50px;
+		}
+		.footer{
+			height: 50px;
+			position: absolute;
+    		bottom: 0px;
+   			width: 100%;
+   			display:flex;
+			display:-webkit-flex;
+		}
+		.costInfo{
+			flex:3;
+			display:flex;
+			display:-webkit-flex;
+			padding: 5px 15px;
+		}
+		.orders{
+			flex:2;
+			display: inline-block;
+			background-color: #5B8BC9;
+		}
+		.cost{
+			flex:3;
+			display: inline-block;
+		}
+		.des{
+			flex:2;
+			font-size: 0.7rem;
+			color: #7A7C88;
+			display:flex;
+			display:-webkit-flex;
+		}
+		.desLift{
+			flex: 2;
+		    display: inline-block;
+		    text-align: right;
+		    height: 40px;
+		    margin-top: 7px;
+		    line-height: 15px;
+		    letter-spacing: 3px;
+		}
+		.desRight{
+			flex:1;
+			display: inline-block;
+			text-align: center;
+		}
+		.desRightImg{
+			cursor: pointer;
+			margin-top: 10px;
+		}
+		.costNum{
+			font-size: 1.5rem;
+		    display: inline-block;
+		    font-weight: 700;
+		    color: #79B036;
+		    position: absolute;
+		    top: 50%;
+    		webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+		.costName{
+			display: inline-block;
+		    height: 40px;
+		    line-height: 40px;
+		    letter-spacing: 0.28rem;
+		    font-size: 1rem;
+		    position: relative;
+		    top: 50%;
+    		webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+		.btn{
+			background: transparent;
+		    border: none;
+		    width: 100%;
+		    height: 50px;
+		    color: #FFF;
+		    letter-spacing: 3px;
+		    outline: none;
+		}
+
+		.personalInfo{
+			width: 90%;
+		    height: auto;
+		    margin: 40px auto;
+		    border-radius: 10px;
+		    background-color: #FFF;
+		    box-shadow: 0px 0px 10px 1px #DDDDDD;
+		}
+		.personalName{
+			height: 50px;
+    		padding: 5px 10px;
+    		display:flex;
+			display:-webkit-flex;
+			border-bottom: 1px solid #F2F2F2;
+		}
+		.personalNameLeft{
+			flex:2;
+			display: inline-block;
+		    text-align: left;
+		    vertical-align: sub;
+		    border-right: 1px solid #F2F2F2;
+		    padding: 0px 10px;
+		    height: 50px;
+		}
+		.personalNameLeftImg{
+			position: relative;
+    		width: 1.5rem;
+    		height:1.5rem;
+    		top: 50%;
+    		webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+		.personalNameLeftText{
+			position: relative;
+    		top: 50%;
+    		webkit-transform: translateY(-110%);
+			-moz-transform: translateY(-110%);
+			-ms-transform: translateY(-110%);
+			transform: translateY(-110%);
+    		color: #434B76;
+    		font-size: 0.8rem;
+    		margin-left: 5px;
+    		font-weight: 700;
+		}
+		.personalNameRight{
+			flex:3;
+			padding-right: 10px;
+		}
+		.personalNameRightInput{
+			height: 30px;
+		    position: relative;
+		    top: 50%;
+    		webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+		    border: none;
+		    outline: none;
+		    text-align: right;
+    		width: 100%;
+    		font-size: 1.2rem;
+		}
+		::-webkit-input-placeholder {
+			color: #CFCFCF;
+			font-size: 0.8rem;
+			text-align: right;
+		}
+		::-moz-placeholder {
+			color: #CFCFCF;
+			font-size: 0.8rem;
+			text-align: right;
+		}
+		
+		.medicalInfo{
+			width: 90%;
+		    height: auto;
+		    margin: 20px auto;
+		    border-radius: 10px;
+		    background-color: #FFF;
+		    box-shadow: 0px 0px 10px 1px #DDDDDD;
+		}
+		.hospitalName{
+			height: 40px;
+    		padding: 5px 10px;
+    		display:flex;
+			display:-webkit-flex;
+			border-bottom: 1px solid #F2F2F2;
+		}
+		.hospitalNameLeft{
+			flex:1;
+			text-align: left;
+			padding-left: 10px;
+		}
+		.hospitalNameLeftImg{
+			width: 1.4rem;
+    		height:1.4rem; 
+    		position: relative;
+		    top: 50%;
+    		webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+		.hospitalNameRight{
+			flex:1;
+			text-align: right;
+			font-size: 0.8rem;
+			padding-right: 10px;
+		}
+		.hospitalNameRightText{
+			height: 40px;
+    		line-height: 40px;
+		}
+		.medicalName{
+			height: 50px;
+    		padding: 5px 10px;
+    		display:flex;
+			display:-webkit-flex;
+			border-bottom: 1px solid #F2F2F2;
+		}
+		.medicalNameLeft{
+			flex: 3;
+		    display: inline-block;
+		    position: relative;
+		    padding-left: 10px;
+		}
+		.detailsImg{
+			width: 1.2rem;
+    		height:1.2rem;
+			position: absolute;
+		    top: 50%;
+    		webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+			cursor: pointer;
+		}
+		.medicalNameCenter{
+			flex: 3;
+		    text-align: left;
+		    padding-left: 10px;
+		}
+		.medicalNameRight{
+		    flex: 2;
+		    display: inline-block;
+		    padding-right: 10px;
+		    text-align: right;
+		}
+		.medicalNameRightText{
+			height: 50px;
+			line-height:50px;
+		}
+		.medicalNameCenterText{
+			height: 50px;
+		    line-height: 50px;
+		    color: #858585;
+		    font-size: 0.8rem;
+		}
+		.model{
+			width: 100%;
+			height:100%;
+			z-index: 99;
+			position: absolute;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			opacity: 0.5;
+			background-color: #333;
+			display: none;
+		}
+		.closeModel1{
+			display: inline-block;
+		    float: right;
+		    margin-right: 20px;
+		    overflow: auto;
+		    height: 30px;
+		    width: 30px;
+		}
+		.closeModel2{
+			display: inline-block;
+		    float: right;
+		    margin-right: 20px;
+		    overflow: auto;
+		    height: 30px;
+		    width: 30px;
+		}
+		.modelContent1 {
+			background-color: #FFF;
+			width: 80vw;
+			min-width: 200px;
+			height: auto;
+			min-height: 50vmin;
+			border-radius: 15px;
+			padding: 20px;
+			font-size: 1rem;
+			position: relative;
+		}
+		.modelContent2 {
+			background-color: #FFF;
+		    width: 75vw;
+		    min-width: 200px;
+		    height: auto;
+		    border-radius: 10px;
+		    padding: 30px;
+		    font-size: 1rem;
+		}
+		.modelHeader1{
+			padding: 15px 20px;
+			color: #FFF;
+			font-size: 1.2rem;
+			min-height: 60px;
+		}
+		.modelHeader2{
+			padding: 15px 20px;
+			color: #FFF;
+			font-size: 1.2rem;
+		}
+		.close1{
+			cursor: pointer;
+		    z-index: 100;
+		    width: 30px;
+		    height: 30px;
+		    display: inline-block;
+		}
+		.close2{
+			cursor: pointer;
+		    z-index: 100;
+		    width: 30px;
+		    height: 30px;
+		    display: inline-block;
+		}
+		.box1{
+			width: auto;
+			height:auto;
+			z-index: 100;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			webkit-transform: translateX(-50%) translateY(-50%);
+			-moz-transform: translateX(-50%) translateY(-50%);
+			-ms-transform: translateX(-50%) translateY(-50%);
+			transform: translateX(-50%) translateY(-50%);
+			background-color: transparent;
+			display: none;
+		}
+		.box2{
+			width: auto;
+			height:auto;
+			z-index: 100;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			webkit-transform: translateX(-50%) translateY(-50%);
+			-moz-transform: translateX(-50%) translateY(-50%);
+			-ms-transform: translateX(-50%) translateY(-50%);
+			transform: translateX(-50%) translateY(-50%);
+			background-color: transparent;
+			display: none;
+		}
+		.modelContentInfo1{
+			width: 70vw;
+			height: auto;
+			min-height: 50px;
+			border: 2px solid #394C74;
+			margin: 0px auto;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			webkit-transform: translateX(-50%) translateY(-50%);
+			-moz-transform: translateX(-50%) translateY(-50%);
+			-ms-transform: translateX(-50%) translateY(-50%);
+			transform: translateX(-50%) translateY(-50%);
+			padding: 15px;
+		}
+		.modelContentInfo2{
+			width: 70vw;
+			height: auto;
+			min-height: 30px;
+			border-bottom: 1px solid #BAB9BE;
+			margin: 0px auto;
+			padding: 15px;
+			font-size: 0.78rem;
+		}
+		.modelContentBtn{
+			width: 60vw;
+    		height: 30px;
+			position: fixed;
+			top: 75%;
+			left: 50%;
+			webkit-transform: translateX(-50%) translateY(-50%);
+			-moz-transform: translateX(-50%) translateY(-50%);
+			-ms-transform: translateX(-50%) translateY(-50%);
+			transform: translateX(-50%) translateY(-50%);
+			border-radius: 5px;
+		}
+		.orderBtn{
+			width: 100%;
+		    height: 100%;
+		    border: none;
+		    background-color: #87cd50;
+		    border-radius: 5px;
+		    box-shadow: 2px 2px 5px 1px #ABCD83;
+		    outline: none;
+		}
+		.borderBottomNone{
+			border-bottom: transparent;
+		}
+		.block{
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="header">
+			<div class="headerItem1 text-left">
+				<img src="wechatImg/return.png" width="25px" height="25px" class="marginTop5">
+			</div>
+			<div class="headerItem3 text-center">
+				<label class="marginTop10">SHENBIAN</label>
+			</div>	
+			<div class="headerItem1 text-right">
+				<img src="wechatImg/service.png" width="25px" height="25px" class="marginTop5">
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="personalInfo">
+				<div class="personalName">
+					<div class="personalNameLeft">
+						<img src="wechatImg/personal.png" class="inlineBlock personalNameLeftImg">
+						<label class="inlineBlock personalNameLeftText">体检人姓名</label>
+					</div>
+					<div class="personalNameRight inlineBlock">
+						<input type="text" placeholder="未填写" class="personalNameRightInput">
+					</div>
+				</div>
+				<div class="personalName">
+					<div class="personalNameLeft">
+						<img src="wechatImg/gender.png" class="inlineBlock personalNameLeftImg">
+						<label class="inlineBlock personalNameLeftText">体检人性别</label>
+					</div>
+					<div class="personalNameRight inlineBlock">
+						<input type="text" placeholder="未填写" class="personalNameRightInput">
+					</div>
+				</div>
+				<div class="personalName borderBottomNone">
+					<div class="personalNameLeft">
+						<img src="wechatImg/contact.png" class="inlineBlock personalNameLeftImg">
+						<label class="inlineBlock personalNameLeftText">联系方式</label>
+					</div>
+					<div class="personalNameRight inlineBlock">
+						<input type="text" placeholder="未填写" class="personalNameRightInput">
+					</div>
+				</div>	
+			</div>
+			<div class="medicalInfo">
+				<div class="hospitalName">
+					<div class="hospitalNameLeft">
+						<img src="wechatImg/hospital.png" class="hospitalNameLeftImg">
+					</div>
+					<div class="hospitalNameRight">
+						<label class="hospitalNameRightText">苏大附一院</label>
+					</div>
+				</div>
+				<div class="medicalName">
+					<div class="medicalNameLeft">
+						<img src="wechatImg/serviceCharge.png" class="hospitalNameLeftImg">
+						<label class="inlineBlock personalNameLeftText">服务费</label>
+						<img src="wechatImg/question.png" width="22px" height="22px" class="detailsImg">
+					</div>
+					<div class="medicalNameCenter">
+						
+					</div>
+					<div class="medicalNameRight">
+						<label class="medicalNameRightText">0</label>
+					</div>
+				</div>
+				<div class="medicalName">
+					<div class="medicalNameLeft">
+						<img src="wechatImg/gastricCancer.png" class="hospitalNameLeftImg">
+						<label class="inlineBlock personalNameLeftText">胃癌</label>
+					</div>
+					<div class="medicalNameCenter">
+						<label class="inlineBlock medicalNameCenterText">胃癌早期筛查</label>
+					</div>
+					<div class="medicalNameRight">
+						<label class="medicalNameRightText">550</label>
+					</div>
+				</div>
+				<div class="medicalName">
+					<div class="medicalNameLeft">
+						<img src="wechatImg/gastricCancer.png" class="hospitalNameLeftImg">
+						<label class="inlineBlock personalNameLeftText">胃癌</label>
+					</div>
+					<div class="medicalNameCenter">
+						<label class="inlineBlock medicalNameCenterText">胃癌中期筛查</label>
+					</div>
+					<div class="medicalNameRight">
+						<label class="medicalNameRightText">550</label>
+					</div>
+				</div>
+				<div class="medicalName">
+					<div class="medicalNameLeft">
+						<img src="wechatImg/gastricCancer.png" class="hospitalNameLeftImg">
+						<label class="inlineBlock personalNameLeftText">胃癌</label>
+					</div>
+					<div class="medicalNameCenter">
+						<label class="inlineBlock medicalNameCenterText">胃癌晚期筛查</label>
+					</div>
+					<div class="medicalNameRight">
+						<label class="medicalNameRightText">550</label>
+					</div>
+				</div>
+				<div class="medicalName">
+					<div class="medicalNameLeft">
+						<img src="wechatImg/lung.png" class="hospitalNameLeftImg">
+						<label class="inlineBlock personalNameLeftText">肺癌</label>
+					</div>
+					<div class="medicalNameCenter">
+						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
+					</div>
+					<div class="medicalNameRight">
+						<label class="medicalNameRightText">1000</label>
+					</div>
+				</div>
+				<div class="medicalName">
+					<div class="medicalNameLeft">
+						<img src="wechatImg/lung.png" class="hospitalNameLeftImg">
+						<label class="inlineBlock personalNameLeftText">肺癌</label>
+					</div>
+					<div class="medicalNameCenter">
+						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
+					</div>
+					<div class="medicalNameRight">
+						<label class="medicalNameRightText">1000</label>
+					</div>
+				</div>
+				<div class="medicalName">
+					<div class="medicalNameLeft">
+						<img src="wechatImg/lung.png" class="hospitalNameLeftImg">
+						<label class="inlineBlock personalNameLeftText">肺癌</label>
+					</div>
+					<div class="medicalNameCenter">
+						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
+					</div>
+					<div class="medicalNameRight">
+						<label class="medicalNameRightText">1000</label>
+					</div>
+				</div>
+				<div class="medicalName">
+					<div class="medicalNameLeft">
+						<img src="wechatImg/lung.png" class="hospitalNameLeftImg">
+						<label class="inlineBlock personalNameLeftText">肺癌</label>
+					</div>
+					<div class="medicalNameCenter">
+						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
+					</div>
+					<div class="medicalNameRight">
+						<label class="medicalNameRightText">1000</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer">
+			<div class="costInfo">
+				<div class="cost">
+					<div class="costName">总额:</div>
+					<div class="costNum">1500</div>
+				</div>
+				<div class="des">
+					<div class="desLift">
+						<p class="margin0">先体验</p>
+						<p class="margin0">后付款</p>
+					</div>
+					<div class="desRight">
+						<img src="wechatImg/question.png" width="22px" height="22px" class="desRightImg">
+					</div>
+				</div>
+			</div>
+			<div class="orders">
+				<button class="btn">立即下单</button>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="box1">
+		<div class="modelHeader1">
+			<div class="closeModel1">
+				<img src="wechatImg/close.png" height="30" width="30" alt="&times" class="close1">
+			</div>
+		</div>
+    	<div class="modelContent1">
+			<div class="modelContentInfo1 text-center">
+				<span>支付时间及方式、订单取消、价格以及免责声明。</span>
+			</div>
+			<div class="modelContentBtn">
+				<button class="orderBtn">立即下单</button>
+			</div>
+    	</div>
+	</div>
+
+	<div class="box2">
+		<div class="modelHeader2">
+			<span style="display:inline-block;">关于服务费</span>
+			<div class="closeModel2">
+				<img src="wechatImg/close.png" height="30" width="30" alt="&times" class="close2">
+			</div>
+		</div>
+    	<div class="modelContent2">
+			<div class="modelContentInfo2 text-center">
+				<span>服务费100元，单笔订单满<span style="color: #5F9C35">1000</span>元免除服务费</span>
+			</div>
+			<div class="modelContentInfo2 text-left borderBottomNone">
+				<label class="block">陪检服务内容：</label>
+				<span>陪检、电话通知、快递体检材料。</span>
+			</div>
+    	</div>
+	</div>
+
+	<div class="model"></div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(".desRightImg").click(function(){
+			$(".model").css("display","block");
+			$(".box1").css("display","block");
+			return false;
+		});
+		$(".model").click(function(){
+			$(".model").css("display","none");
+			$(".box1").css("display","none");
+			$(".box2").css("display","none");
+			return false;
+		});
+		$(".closeModel1").click(function(){
+			$(".model").css("display","none");
+			$(".box1").css("display","none");
+			return false;
+		});
+
+		$(".detailsImg").click(function(){
+			$(".model").css("display","block");
+			$(".box2").css("display","block");
+			return false;
+		});
+		$(".closeModel2").click(function(){
+			$(".model").css("display","none");
+			$(".box2").css("display","none");
+			return false;
+		});
+	</script>
+	
+</body>
+</html>
