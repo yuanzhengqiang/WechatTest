@@ -6,35 +6,12 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<title>体检项目选择</title>
 	<style>
-		@media screen and (min-width: 320px) {
-		    html {font-size: 12px;}
-		}
-		 
-		@media screen and (min-width: 370px) {
-		    html {font-size: 14px;}
-		}
-		 
-		@media screen and (min-width: 410px) {
-		    html {font-size: 16px;}
-		}
-		 
-		@media screen and (min-width: 440px) {
-		    html {font-size: 18px;}
-		}
-		 
-		@media screen and (min-width: 480px) {
-		    html {font-size: 18px;}
-		}
-		 
-		@media screen and (min-width: 640px) {
-		    html {font-size: 18px;}
-		}
-		body,html{
-			margin: 0px;
-			padding: 0px;
-			height:100%; 
-			overflow: hidden;
-		}
+		/*320px布局*/
+        html{font-size: 100px;}
+        body{
+            padding:0;
+            margin:0;
+        }
 		.container-fluid {
 			margin: 0px;
 			padding: 0px;
@@ -51,78 +28,74 @@
 			text-align: center;
 		}
 		button:active {
-            box-shadow: 2px 4px 10px #000;
+            box-shadow: 0.02rem 0.04rem 0.1rem #ddd;
         }
-		
-		::-webkit-input-placeholder {
-			color: #FFF;
-			font-size: 1rem;
-		}
-		::-moz-placeholder {
-			color: #FFF;
-			font-size: 1rem;
-		}
-		.marginTop5{
-			margin-top: 7px;
-		}
-		.marginTop10{
-			margin-top: 10px;
-			display: inline-block;
-			letter-spacing: 3px;
-		}
-		.margin0{
-			margin:0px;
-		}
-		
 		.inlineBlock{
 			display:inline-block;
 		}
 		.header{
-			background:-moz-linear-gradient(left,#8ACA38,#5FA835);
-			background:-webkit-linear-gradient(left,#8ACA38,#5FA835);
-			background:linear-gradient(left,#8ACA38,#5FA835);
-			padding: 0px 15px;
-			height: 45px;
-			display:flex;
-			display:-webkit-flex;
-		}
-		.headerItem1{
-			flex:1;
-			display: inline-block;
-			position: relative;
-		}
-		.headerItem3{
-			flex:3;
-			color: #FFF;
-			font-size: 1.1rem;
-			margin-bottom: 0px;
-			font-weight: 700;
-			display: inline-block;
-		}
+            background:-moz-linear-gradient(left,#8ac938,#7bbd37,#60a934);
+            background:-webkit-linear-gradient(left,#8ac938,#7bbd37,#60a934);
+            background:linear-gradient(left,#8ac938,#7bbd37,#60a934);
+            padding: 0rem 0.15rem;
+            height: 0.45rem;
+            display: flex;
+            display: -webkit-flex;
+        }
+        .headerItem1{
+            flex:1;
+            display: inline-block;
+            position: relative;
+        }
+        .headerItem3{
+            flex: 3;
+            color: #FFF;
+            font-size: 0.16rem;
+            font-weight: 700;
+            display: inline-block;
+            font-family: SimHei;
+        }
+        .headerName{
+            display: inline-block;
+            letter-spacing: 0.03rem;
+            height: 0.45rem;
+            line-height: 0.45rem;
+        }
+        .headerImg{
+            width: 0.2rem;
+            height: 0.2rem;;
+            position: absolute;
+            top: 50%;
+            webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
 		.content{
 			height: auto;
 			width: 100%;
 			background-color: #F1F1F1;
 			overflow-y:auto; 
 			position: absolute;
-			top: 45px;
-			bottom:50px;
+			top: 0.45rem;
+			bottom:0.45rem;
 		}
 		.footer{
-			height: 50px;
+			height: 0.45rem;
 			position: absolute;
-    		bottom: 0px;
+    		bottom: 0rem;
    			width: 100%;
    			overflow: hidden;
    			display:flex;
 			display:-webkit-flex;
+			font-size: 0.16rem;
 		}
 		.costInfo{
 			flex:3;
-			height: 50px;
+			height: 0.45rem;
 			display:flex;
 			display:-webkit-flex;
-			padding: 0px 15px;
+			padding: 0rem 0.15rem;
 		}
 		.orders{
 			flex:2;
@@ -141,72 +114,38 @@
 			display:flex;
 			display:-webkit-flex;
 		}
-		.desLift{
-			flex: 2;
-		    display: inline-block;
-		    text-align: right;
-		    height: 50px;
-		    margin-top: 10px;
-		    line-height: 15px;
-		    letter-spacing: 3px;
-		}
-		.desRight{
-			flex:1;
-			display: inline-block;
-			text-align: center;
-		}
-		.desRightImg{
-			cursor: pointer;
-			margin-top: 14px;
-		}
 		.costNum{
-			font-size: 1.5rem;
+			font-size: 0.14rem;
 		    display: inline-block;
 		    font-weight: 700;
 		    color: #79B036;
-		    height: 50px;
-		    line-height: 50px;
-		}
-		.costName{
-		    display: inline-block;
-		    height: 50px;
-		    line-height: 50px;
-		    letter-spacing: 0.28rem;
-		    font-size: 1rem;
+		    height: 0.35rem;
+		    line-height: 0.35rem;
+		    margin-top: 0.05rem;
+		    width:100%;
 		}
 		.btn{
 			background: transparent;
 		    border: none;
 		    width: 100%;
-		    height: 50px;
+		    height: 0.45rem;
 		    color: #FFF;
-		    letter-spacing: 3px;
+		    letter-spacing: 0.05rem;
 		    outline: none;
-		    font-size: 1.2rem;
+		    font-size: 0.14rem;
 		    -webkit-appearance : none ;  /*解决iphone safari上的圆角问题*/
 		}
-		::-webkit-input-placeholder {
-			color: #CFCFCF;
-			font-size: 0.8rem;
-			text-align: right;
-		}
-		::-moz-placeholder {
-			color: #CFCFCF;
-			font-size: 0.8rem;
-			text-align: right;
-		}
-		
 		.medicalInfo{
-			width: 90%;
 		    height: auto;
-		    margin: 25px auto 20px;
-		    border-radius: 10px;
+		    margin: 0.25rem 0.16rem;
+		    border-radius: 0.1rem;
 		    background-color: #FFF;
-		    box-shadow: 0px 0px 10px 1px #DDDDDD;
+		    box-shadow: 0px 0px 0.1rem 0.01rem #DDDDDD;
 		    overflow: hidden;
+		    font-size: 0.16rem;
 		}
 		.medicalType{
-			height: 50px;
+			height: 0.44rem;
     		display:flex;
 			display:-webkit-flex;
 		}
@@ -215,59 +154,52 @@
 		    display: inline-block;
 		    text-align: center;
 		    vertical-align: sub;
-		    height: 46px;
-		    line-height: 46px;
-		    font-size: 0.9rem;
+		    height: 0.4rem;
+		    line-height: 0.4rem;
+		    font-size: 0.14rem;
+		   	font-weight: 600;
 		    color: #FFF;
 		    background-color: #87c738;
-		    letter-spacing: 1px;
-		    border-radius: 10px 0px 0px 0px;
+		    letter-spacing: 0.01rem;
+		    border-radius: 0.1rem 0px 0px 0px;
 		    position: relative;
-		    border: 2px solid #87C738;
+		    border: 0.02rem solid #87C738;
 		    cursor: pointer;
-		}
-		.medicalTypeLeftImg{
-			width: 1.4rem;
-    		height:1.4rem; 
-    		position: relative;
-		    top: 50%;
-    		webkit-transform: translateY(-40%);
-			-moz-transform: translateY(-40%);
-			-ms-transform: translateY(-40%);
-			transform: translateY(-40%);
 		}
 		.medicalTypeRight{
 			flex: 1;
 		    text-align: center;
-		    font-size: 0.9rem;
-		    border-radius: 0px 10px 0px 0px;
-		    border: 2px solid #87c738;
-		    letter-spacing: 1px;
+		    font-size: 0.14rem;
+		    font-weight: 600;
+		    border-radius: 0px 0.1rem 0px 0px;
+		    border: 0.02rem solid #87c738;
+		    letter-spacing: 0.01rem;
 		    color: #87c738;
-		    height: 46px;
-		    line-height: 46px;
+		    height: 0.4rem;
+		    line-height: 0.4rem;
 		    cursor: pointer;
 		    position: relative;
 		}
 		
 		.medicalName{
-			height: 50px;
-    		padding: 0px 10px;
+			height: 0.5rem;
+    		padding: 0px;
     		display:flex;
 			display:-webkit-flex;
-			border-bottom: 1px solid #F2F2F2;
+			border-bottom: 0.01rem solid #F2F2F2;
 		}
 		.medicalNameLeft{
-			flex: 2;
+			flex: 63;
 		    display: inline-block;
 		    text-align: left;
 		    vertical-align: sub;
-		    height: 50px;
+		    height: 0.5rem;
 		}
 		.medicalNameLeftText{
-			line-height: 50px;
+			line-height: 0.5rem;
 		    color: #434B76;
-		    font-size: 0.9rem;
+		    margin-left: 0.05rem;
+		    font-size: 0.105rem;
 		    font-weight: 700;
     	}
 		.detailsImg{
@@ -282,7 +214,7 @@
 			cursor: pointer;
 		}
 		.medicalNameCenter{
-			flex: 5;
+			flex: 98;
 		    text-align: left;
 		    position: relative;
 		}
@@ -299,16 +231,18 @@
 			text-align: left;
 		}
 		.medicalNameCenterBoxTopName{
-			font-size: 0.65rem;
+			font-size: 0.095rem;
     		color: #5a5a5a;
     		font-weight: 600;
 		}
 		.medicalNameCenterBoxTopDes{
-			width: 0.65rem;
-    		height: 0.65rem;
+			width: 0.095rem;
+		    height: 0.095;
+		    position: relative;
+		    top: 0.01rem;
 		}
 		.medicalNameCenterBoxDesText{
-			font-size: 0.5rem;
+			font-size: 0.07rem;
 		    color: #cdcdcd;
 		    display: block;
 		    width: 100%;
@@ -317,24 +251,25 @@
 		    text-overflow: ellipsis;
 		}
 		.medicalNameRight{
-		    flex: 1;
+		    flex: 30;
 		    display: inline-block;
-		    padding-right: 10px;
 		    text-align: right;
-		    min-width: 50px;
-		    height: 50px;
+		    height: 0.5rem;
+		    padding-right: 0.1rem;
 		}
 		.medicalNameRightText{
-			height: 30px;
+			height: 0.3rem;
 		    width: 100%;
-		    line-height: 30px;
+		    line-height: 0.3rem;
 		    display: inline-block;
-		    margin-top: 10px;
-		    border-left: 1px solid #f1f1f1;
+		    margin-top: 0.1rem;
+		    border-left: 0.01rem solid #f1f1f1;
+		    font-size: 0.12rem;
+		    font-family: SimHei;
 		}
 		.medicalNameCenterText{
-			height: 50px;
-		    line-height: 50px;
+			height: 0.5rem;
+		    line-height: 0.5rem;
 		    color: #858585;
 		    font-size: 0.8rem;
 		}
@@ -354,59 +289,59 @@
 			display: inline-block;
 		    float: right;
 		    overflow: auto;
-		    height: 30px;
-		    width: 30px;
+		    height: 0.3rem;
+		    width: 0.3rem;
 		}
 		.closeModel2{
 			display: inline-block;
 		    float: right;
 		    overflow: auto;
-		    height: 30px;
-		    width: 30px;
+		    height: 0.3rem;
+		    width: 0.3rem;
 		}
 		.modelContent1 {
 			background-color: #FFF;
 			width: 80vw;
-			min-width: 200px;
+			min-width: 2rem;
 			height: auto;
 			min-height: 50vmin;
-			border-radius: 15px;
-			padding: 20px;
-			font-size: 1rem;
+			border-radius: 0.15rem;
+			padding: 0.2rem;
+			font-size: 0.16rem;
 			position: relative;
 		}
 		.modelContent2 {
 			background-color: #FFF;
 		    width: 75vw;
-		    min-width: 200px;
+		    min-width: 2rem;
 		    height: auto;
-		    border-radius: 10px;
-		    padding: 30px;
-		    font-size: 1rem;
+		    border-radius: 0.1rem;
+		    padding: 0.3rem;
+		    font-size: 0.16rem;
 		}
 		.modelHeader1{
-			padding: 15px 0px;
+			padding: 0.15rem 0rem;
 			color: #FFF;
-			font-size: 1.2rem;
-			min-height: 25px;
+			font-size: 0.18rem;
+			min-height: 0.25rem;
 		}
 		.modelHeader2{
-			padding: 15px 0px;
+			padding: 0.15rem 0rem;
 			color: #FFF;
-			font-size: 1.2rem;
+			font-size: 0.18rem;
 		}
 		.close1{
 			cursor: pointer;
 		    z-index: 100;
-		    width: 20px;
-		    height: 20px;
+		    width: 0.2rem;
+		    height: 0.2rem;
 		    display: inline-block;
 		}
 		.close2{
 			cursor: pointer;
 		    z-index: 100;
-		    width: 20px;
-		    height: 20px;
+		    width: 0.2rem;
+		    height: 0.2rem;
 		    display: inline-block;
 		}
 		.box1{
@@ -440,7 +375,7 @@
 		.modelContentInfo1{
 			width: 70vw;
 			height: auto;
-			min-height: 50px;
+			min-height: 0.5rem;
 			margin: 0px auto;
 			position: fixed;
 			top: 50%;
@@ -454,14 +389,14 @@
 		.modelContentInfo2{
 			width: 70vw;
 			height: auto;
-			min-height: 30px;
+			min-height: 0.3rem;
 			margin: 0px auto;
-			padding: 15px 0px;
-			font-size: 0.78rem;
+			padding: 0.15rem 0rem;
+			font-size: 0.12rem;
 		}
 		.modelContentBtn{
 			width: 60vw;
-    		height: 30px;
+    		height: 0.3rem;
 			position: fixed;
 			top: 75%;
 			left: 50%;
@@ -469,15 +404,15 @@
 			-moz-transform: translateX(-50%) translateY(-50%);
 			-ms-transform: translateX(-50%) translateY(-50%);
 			transform: translateX(-50%) translateY(-50%);
-			border-radius: 5px;
+			border-radius: 0.05rem;
 		}
 		.orderBtn{
 			width: 100%;
 		    height: 100%;
 		    border: none;
 		    background-color: #87cd50;
-		    border-radius: 5px;
-		    box-shadow: 2px 2px 5px 1px #ABCD83;
+		    border-radius: 0.05rem;
+		    box-shadow: 0.02rem 0.02rem 0.05rem 0.01rem #ABCD83;
 		    outline: none;
 		    -webkit-appearance : none ;  /*解决iphone safari上的圆角问题*/
 		}
@@ -487,24 +422,11 @@
 		.block{
 			display: block;
 		}
-		.headerName{
-			display: inline-block;
-		    letter-spacing: 3px;
-		    line-height: 45px;
-		}
-		.headerImg{
-			width: 1.4rem;
-			height: 1.4rem;
-			position: absolute;
-		    top: 50%;
-    		webkit-transform: translateY(-50%);
-			-moz-transform: translateY(-50%);
-			-ms-transform: translateY(-50%);
-			transform: translateY(-50%);
-		}
+
 		.hospitalInfo{
-			margin-top: 20px;
+			margin-top: 0.16rem;
     		text-align: center;
+    		font-size: 0.16rem;
 		}
 		.hospitalInfoLeft{
 			display: inline-block;
@@ -513,54 +435,54 @@
 		.hospitalInfoRight{
 			display: inline-block;
 		    position: relative;
-		    top: -0.4rem;
-		    margin-left: 10px;		
+		    top: -0.05rem;
+		    margin-left: 0.1rem;		
 		}
 		.hospitalInfoImg{
-			width: 1.6rem;
-    		height: 1.6rem;
+			width: 0.2rem;
+    		height: 0.2rem;
     	}
 		.hospitalInfoText{
 			color: #7c7c7c;
-    		font-size: 0.86rem;
+    		font-size: 0.11rem;
 		}
 		.basisInfo {
-			width: 90%;
-		    height: 60px;
-		    margin: 10px auto;
-		    border-radius: 10px;
+		    height: 0.6rem;
+		    margin: 0.1rem 0.16rem;
+		    border-radius: 0.1rem;
 		    overflow: hidden;
 		    background-color: #FFF;
-		    box-shadow: 0px 0px 10px 1px #DDDDDD;
+		    box-shadow: 0px 0px 0.1rem 1px #DDDDDD;
+		    font-size: 0.16rem;
 		}
 		.basisTop{
 			width: 100%;
-			height: 10px;
+			height: 0.1rem;
 			background-color: #87c738;
 			
 		}
 		.basisContent{
 			display: flex;
     		display: -webkit-flex;
-    		height: 50px;
+    		height: 0.5rem;
 		}
 		.basisContentLeft{
-			flex: 1;
+			flex: 15;
     		display: inline-block;
-    		height: 50px;
+    		height: 0.5rem;
     		text-align: center;
 		}
 		.basisContentCenter{
-			flex: 3;
+			flex: 56;
     		display: inline-block;
-    		height: 50px;
+    		height: 0.5rem;
 		}
 		.basisContentRight{
-			flex: 1;
+			flex: 12;
 		    display: inline-block;
-		    height: 50px;
+		    height: 0.5rem;
 		    text-align: right;
-		    padding-right: 20px;
+		    padding-right: 0.1rem;
 		}
 		.basisContentLeftBox{
 			display: inline-block;
@@ -573,8 +495,8 @@
 			transform: translateY(-50%);
 		}
 		.basisContentLeftBoxImg{
-			width: 0.8rem;
-			height: 0.8rem;
+			width: 0.12rem;
+			height: 0.12rem;
 			display: block;
 			margin: 0px auto;
     		webkit-transform: translateY(20%);
@@ -583,7 +505,7 @@
 			transform: translateY(20%);
 		}
 		.basisContentLeftBoxText{
-			font-size: 0.6rem;
+			font-size: 0.08rem;
 		}
 		.basisContentCenterBox{
 			position: relative;
@@ -597,17 +519,18 @@
 		}
 		.basisContentCenterBoxTopName{
 			display: inline-block;
-		    font-size: 0.9rem;
+		    font-size: 0.125rem;
 		    font-weight: 600;
-		    letter-spacing: 3px;
+		    letter-spacing: 0.03rem;
+		    color: #414972;
 		}
 		.basisContentCenterBoxTopDes{
-			width: 0.9rem;
-    		height: 0.9rem;
-    		webkit-transform: translateY(10%);
-			-moz-transform: translateY(10%);
-			-ms-transform: translateY(10%);
-			transform: translateY(10%);
+			width: 0.125rem;
+    		height: 0.125rem;
+    		webkit-transform: translateY(20%);
+			-moz-transform: translateY(20%);
+			-ms-transform: translateY(20%);
+			transform: translateY(20%);
 			cursor: pointer;
 		}
 		.basisContentCenterBoxDes{
@@ -616,18 +539,18 @@
 		}
 		.basisContentCenterBoxDesText{
 			color: #bfbfbf;
-			font-size: 0.5rem;
+			font-size: 0.08rem;
 			display: block;
 			text-align: center;
 		}
 		.trigon{
 			width: 0;
 		    height: 0;
-		    border-left: 6px solid transparent;
-		    border-right: 6px solid transparent;
-		    border-bottom: 10px solid #FFF;
+		    border-left: 0.06rem solid transparent;
+		    border-right: 0.06rem solid transparent;
+		    border-bottom: 0.1rem solid #FFF;
 		    position: absolute;
-		    bottom: -3px;
+		    bottom: -0.03rem;
 		    left: 50%;
 		    webkit-transform: translateX(-50%);
 			-moz-transform: translateX(-50%);
@@ -635,9 +558,14 @@
 			transform: translateX(-50%);
 		}
 		.unit{
-			font-size: 0.6rem;
-		    margin-left: 2px;
+			font-size: 0.055rem;
 		    color: #000;
+		    font-weight: 300;
+		}
+		.unit7{
+			font-size: 0.07rem;
+		    color: #000;
+		    margin-left: 0.05rem;
 		    font-weight: 300;
 		}
 		.notActive{
@@ -652,13 +580,20 @@
     		display: none;
     	}
     	.medicalNameLeftImg{
-			width: 1.1rem;
-		    height: 1.1rem;
+			width: 0.13rem;
+		    height: 0.13rem;
 		    position: relative;
-		    top: 3px;
+		    top: 0.03rem;
+		    margin-left: 0.1rem;
 		}
-		.flex3{
-			flex: 3;
+		.flexLeft{
+			flex: 68;
+		}
+		.flexCenter{
+			flex: 95;
+		}
+		.flexRight{
+			flex: 34;
 		}
 		.right0{
 			right:0;
@@ -666,26 +601,32 @@
 		.left0{
 			left:0;
 		}
+		.borderNone{
+			border: none;
+		}
+		.borderLeft{
+			border-left: 0.01rem solid #f1f1f1;
+		}
 	</style>
 </head>
 <body>
 	<div class="container-fluid">
 		<div class="header">
-			<div class="headerItem1 text-left">
-				<img src="wechatImg/return.png" class="headerImg left0" onclick="returnPage()">
-			</div>
-			<div class="headerItem3 text-center">
-				<label class="headerName">SHENBIAN</label>
-			</div>	
-			<div class="headerItem1 text-right">
-				<img src="wechatImg/service.png" width="25px" height="25px" class = "headerImg right0">
-			</div>
-		</div>
+	        <span class="headerItem1 text-left">
+	            <img src="wechatImg/return.png" class="headerImg left0" onclick="returnPage()">
+	        </span>
+	        <span class="headerItem3 text-center">
+	            <label class="headerName">SHENBIAN</label>
+	        </span>  
+	        <span class="headerItem1 text-right">
+	            <img src="wechatImg/service.png" class = "headerImg right0">
+	        </span>
+	    </div>
 
 		<div class="content">
 			<div class="hospitalInfo">
 				<div class="hospitalInfoLeft">
-					<img src="wechatImg/hospital.png" class="hospitalInfoImg">
+					<img src="wechatImg/hospitaGray.png" class="hospitalInfoImg">
 				</div>
 				<div class="hospitalInfoRight">
 					<span class="hospitalInfoText">苏大附一院</span>
@@ -707,11 +648,11 @@
 								<label  class="basisContentCenterBoxTopName">基础检查服务</label>
 								<img src="wechatImg/explain.png" class="basisContentCenterBoxTopDes" title="常规检查">
 							</div>
-							<span class="basisContentCenterBoxDesText">常规检查</span>
+							<span class="basisContentCenterBoxDesText">常规检查、五官检查、生化检验、全身检验、彩超...</span>
 						</div>
 					</div>
 					<div  class="basisContentRight">
-						<label class="medicalNameRightText">500<span class="unit">元</span></label>
+						<label class="medicalNameRightText borderNone">500<span class="unit">元</span></label>
 					</div>
 				</div>
 			</div>
@@ -807,12 +748,12 @@
 				</div>
 				<div class="cardio hide">
 					<div class="medicalName">
-						<div class="medicalNameLeft flex3">
+						<div class="medicalNameLeft flexLeft">
 							<img src="wechatImg/notSelect.png" class="medicalNameLeftImg notSelect">
 							<img src="wechatImg/selected.png" class="medicalNameLeftImg selected hide">
 							<label class="inlineBlock medicalNameLeftText">心血管疾病</label>
 						</div>
-						<div class="medicalNameCenter">
+						<div class="medicalNameCenter flexCenter">
 							<div class="medicalNameCenterBox">
 								<div class="medicalNameCenterBoxTop">
 									<label  class="medicalNameCenterBoxTopName">彩色心超</label>
@@ -821,7 +762,7 @@
 								<span class="medicalNameCenterBoxDesText">(冠心病、心肌梗塞)持续出现...</span>
 							</div>
 						</div>
-						<div class="medicalNameRight">
+						<div class="medicalNameRight Right">
 							<label class="medicalNameRightText">800<span class="unit">元</span></label>
 						</div>
 					</div>
@@ -832,10 +773,10 @@
 		<div class="footer">
 			<div class="costInfo">
 				<div class="cost">
-					<div class="costNum">3<span class="unit">项</span></div>
+					<div class="costNum">3<span class="unit7">项</span></div>
 				</div>
-				<div class="des">
-					<div class="costNum">1500<span class="unit">元</span></div>
+				<div class="cost">
+					<div class="costNum borderLeft">1500<span class="unit7">元</span></div>
 				</div>
 			</div>
 			<div class="orders">
@@ -929,6 +870,58 @@
 		function returnPage(){
 			window.location.href="https://yuanzhengqiang.github.io/WechatTest/selectAreaHospital.html"; 
 		}
+		// 该代码来自http://www.ghugo.com/mobile-h5-fluid-layout-for-iphone6/
+(function (doc, win) {
+    // 分辨率Resolution适配
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = 100 * (clientWidth / 320) + 'px';
+        };
+
+    // Abort if browser does not support addEventListener
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+    
+    // 一物理像素在不同屏幕的显示效果不一样。要根据devicePixelRatio来修改meta标签的scale,要注释上面的meta标签
+    (function(){
+        return;
+        var dpr = scale =1;
+         var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+        var devicePixelRatio = win.devicePixelRatio;
+        if (isIPhone) {
+            // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+            if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {                
+                dpr = 3;
+            } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)){
+                dpr = 2;
+            } else {
+                dpr = 1;
+            }
+        } else {
+            // 其他设备下，仍旧使用1倍的方案
+            dpr = 1;
+        }
+           scale = 1 / dpr;
+           
+           // 
+           var metaEl = "";
+           metaEl = doc.createElement('meta');
+        metaEl.setAttribute('name', 'viewport');
+        metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+        if (docEl.firstElementChild) {
+            docEl.firstElementChild.appendChild(metaEl);
+        } else {
+            var wrap = doc.createElement('div');
+            wrap.appendChild(metaEl);
+            doc.write(wrap.innerHTML);
+        }
+    })();
+        
+})(document, window); 
 	</script>
 	
 </body>
