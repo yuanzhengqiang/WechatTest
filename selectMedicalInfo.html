@@ -89,6 +89,7 @@
 		.headerItem1{
 			flex:1;
 			display: inline-block;
+			position: relative;
 		}
 		.headerItem3{
 			flex:3;
@@ -345,16 +346,16 @@
 		.medicalNameCenter{
 			flex: 5;
 		    text-align: left;
+		    position: relative;
 		}
 		.medicalNameCenterBox{
 			text-align: left;
-		    position: relative;
+		    position: absolute;
 		    top: 50%;
     		webkit-transform: translateY(-50%);
 			-moz-transform: translateY(-50%);
 			-ms-transform: translateY(-50%);
 			transform: translateY(-50%);
-			border-right: 1px solid #f1f1f1;
 		}
 		.medicalNameCenterBoxTop{
 			text-align: left;
@@ -383,6 +384,7 @@
 		    padding-right: 10px;
 		    text-align: right;
 		    min-width: 50px;
+		    border-left: 1px solid #f1f1f1;
 		}
 		.medicalNameRightText{
 			height: 50px;
@@ -547,12 +549,11 @@
 			display: inline-block;
 		    letter-spacing: 3px;
 		    line-height: 45px;
-
 		}
 		.headerImg{
 			width: 1.4rem;
 			height: 1.4rem;
-			position: relative;
+			position: absolute;
 		    top: 50%;
     		webkit-transform: translateY(-50%);
 			-moz-transform: translateY(-50%);
@@ -644,8 +645,11 @@
 		}
 		.basisContentCenterBox{
 			position: relative;
-    		top: 0.45rem;
-		}
+    		top: 50%;
+    		webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);		}
 		.basisContentCenterBoxTop{
 			text-align: center;
 		}
@@ -706,13 +710,19 @@
     		display: none;
     	}
     	.medicalNameLeftImg{
-			width: 0.9rem;
-		    height: 0.9rem;
+			width: 1.1rem;
+		    height: 1.1rem;
 		    position: relative;
 		    top: 3px;
 		}
 		.flex3{
 			flex: 3;
+		}
+		.right0{
+			right:0;
+		}
+		.left0{
+			left:0;
 		}
 	</style>
 </head>
@@ -720,13 +730,13 @@
 	<div class="container-fluid">
 		<div class="header">
 			<div class="headerItem1 text-left">
-				<img src="wechatImg/return.png" class="headerImg" onclick="returnPage()">
+				<img src="wechatImg/return.png" class="headerImg left0" onclick="returnPage()">
 			</div>
 			<div class="headerItem3 text-center">
 				<label class="headerName">SHENBIAN</label>
 			</div>	
 			<div class="headerItem1 text-right">
-				<img src="wechatImg/service.png" width="25px" height="25px" class = "headerImg">
+				<img src="wechatImg/service.png" width="25px" height="25px" class = "headerImg right0">
 			</div>
 		</div>
 
@@ -853,7 +863,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="cardio">
+				<div class="cardio hide">
 					<div class="medicalName">
 						<div class="medicalNameLeft flex3">
 							<img src="wechatImg/notSelect.png" class="medicalNameLeftImg notSelect">
@@ -926,7 +936,7 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#tumour").click();
+			
 		});
 		$(".basisContentCenterBoxTopDes").click(function(){
 			var title = $(this).attr("title");

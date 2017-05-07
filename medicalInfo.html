@@ -89,6 +89,7 @@
 		.headerItem1{
 			flex:1;
 			display: inline-block;
+			position: relative;
 		}
 		.headerItem3{
 			flex:3;
@@ -101,7 +102,7 @@
 		.headerImg{
 			width: 1.4rem;
 			height: 1.4rem;
-			position: relative;
+			position: absolute;
 		    top: 50%;
     		webkit-transform: translateY(-50%);
 			-moz-transform: translateY(-50%);
@@ -534,20 +535,25 @@
 			-ms-transform: translateY(-50%);
 			transform: translateY(-50%);
 		}
-		
+		.right0{
+			right:0;
+		}
+		.left0{
+			left:0;
+		}
 	</style>
 </head>
 <body>
 	<div class="container-fluid">
 		<div class="header">
 			<div class="headerItem1 text-left">
-				<img src="wechatImg/return.png" class="headerImg" onclick="returnPage()">
+				<img src="wechatImg/return.png" class="headerImg left0" onclick="returnPage()">
 			</div>
 			<div class="headerItem3 text-center">
 				<label class="headerName">SHENBIAN</label>
 			</div>	
 			<div class="headerItem1 text-right">
-				<img src="wechatImg/service.png" width="25px" height="25px" class = "headerImg">
+				<img src="wechatImg/service.png" width="25px" height="25px" class = "headerImg right0">
 			</div>
 		</div>
 
