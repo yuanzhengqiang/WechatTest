@@ -887,7 +887,7 @@
 				</div>
 			</div>
 			<div class="orders">
-				<button class="btn">去结算</button>
+				<button class="btn" onclick="turnPage()">去结算</button>
 			</div>
 		</div>
 	</div>
@@ -971,7 +971,9 @@
 		$(".selected").on('click', function() {
 			$(this).hide().siblings('.notSelect').show();
 		});		
-
+		function turnPage(){
+			window.location.href="https://yuanzhengqiang.github.io/WechatTest/medicalInfo.html"; 
+		}
 	</script>
 	
 </body>
