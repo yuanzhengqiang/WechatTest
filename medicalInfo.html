@@ -335,10 +335,10 @@
 		.medicalNameLeftText{
 			position: relative;
 		    top: 50%;
-		    webkit-transform: translateY(-100%);
-		    -moz-transform: translateY(-100%);
-		    -ms-transform: translateY(-100%);
-		    transform: translateY(-100%);
+		    webkit-transform: translateY(-90%);
+		    -moz-transform: translateY(-90%);
+		    -ms-transform: translateY(-90%);
+		    transform: translateY(-90%);
 		    color: #434B76;
 		    font-size: 0.8rem;
 		    margin-left: 5px;
@@ -400,6 +400,12 @@
 		    height: 30px;
 		    width: 30px;
 		}
+		.closeModel3{
+			display: inline-block;
+		    float: right;
+		    height: 30px;
+		    width: 30px;
+		}
 		.modelContent1 {
 			background-color: #FFF;
 			width: 80vw;
@@ -420,6 +426,15 @@
 		    padding: 30px;
 		    font-size: 1rem;
 		}
+		.modelContent3 {
+			background-color: #FFF;
+		    width: 75vw;
+		    min-width: 200px;
+		    height: auto;
+		    border-radius: 10px;
+		    padding: 30px;
+		    font-size: 1rem;
+		}
 		.modelHeader1{
 			padding: 15px 20px;
 			color: #FFF;
@@ -427,6 +442,11 @@
 			min-height: 25px;
 		}
 		.modelHeader2{
+			padding: 15px 20px;
+			color: #FFF;
+			font-size: 1.2rem;
+		}
+		.modelHeader3{
 			padding: 15px 20px;
 			color: #FFF;
 			font-size: 1.2rem;
@@ -439,6 +459,13 @@
 		    display: inline-block;
 		}
 		.close2{
+			cursor: pointer;
+		    z-index: 100;
+		    width: 30px;
+		    height: 30px;
+		    display: inline-block;
+		}
+		.close3{
 			cursor: pointer;
 		    z-index: 100;
 		    width: 30px;
@@ -460,6 +487,20 @@
 			display: none;
 		}
 		.box2{
+			width: auto;
+			height:auto;
+			z-index: 100;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			webkit-transform: translateX(-50%) translateY(-50%);
+			-moz-transform: translateX(-50%) translateY(-50%);
+			-ms-transform: translateX(-50%) translateY(-50%);
+			transform: translateX(-50%) translateY(-50%);
+			background-color: transparent;
+			display: none;
+		}
+		.box3{
 			width: auto;
 			height:auto;
 			z-index: 100;
@@ -495,6 +536,16 @@
 			margin: 0px auto;
 			padding: 15px;
 			font-size: 0.78rem;
+		}
+		.modelContentInfo3{
+			width: 70vw;
+			height: auto;
+			border-bottom: 1px solid #BAB9BE;
+			margin: 0px auto;
+			padding: 15px;
+			font-size: 0.78rem;
+			background-color: #FFF;
+			text-align: center;
 		}
 		.modelContentBtn{
 			width: 60vw;
@@ -541,6 +592,14 @@
 		.left0{
 			left:0;
 		}
+		.gender{
+			margin: 0px 5px;
+		    position: relative;
+		    top: 3px;
+		}
+		.labelInfo{
+			margin:0px 20px;
+		}
 	</style>
 </head>
 <body>
@@ -574,7 +633,7 @@
 						<label class="inlineBlock personalNameLeftText">体检人性别</label>
 					</div>
 					<div class="personalNameRight inlineBlock">
-						<input type="text" placeholder="未填写" class="personalNameRightInput">
+						<input type="text" placeholder="未填写" class="personalNameRightInput" id="genderInput" readonly="readonly">
 					</div>
 				</div>
 				<div class="personalName borderBottomNone">
@@ -751,7 +810,18 @@
 			</div>
     	</div>
 	</div>
-
+	<div class="box3" id="genderBox">
+		<div class="modelHeader2">
+			<span style="display:inline-block;">选择性别</span>
+			<div class="closeModel3">
+				<img src="wechatImg/close.png" height="30" width="30" alt="&times" class="close3">
+			</div>
+		</div>
+    	<div class="modelContentInfo3" id="genderContent">
+			<label class="labelInfo"><input type="radio" name="gender" class="gender" value="男"><span>男</span></label>
+			<label class="labelInfo"><input type="radio" name="gender" class="gender" value="女"><span>女</span></label>
+    	</div>
+	</div>
 	<div class="model"></div>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript">
@@ -764,6 +834,7 @@
 			$(".model").css("display","none");
 			$(".box1").css("display","none");
 			$(".box2").css("display","none");
+			$(".box3").css("display","none");
 			return false;
 		});
 		$(".closeModel1").click(function(){
@@ -785,6 +856,24 @@
 		function returnPage(){
 			window.location.href="https://yuanzhengqiang.github.io/WechatTest/selectMedicalInfo.html"; 
 		}
+
+		//性别
+		$(".personalNameRightInput").click(function(){
+			$(".model").css("display","block");
+			$(".box3").css("display","block");
+			return false;
+		});
+		$(".closeModel3").click(function(){
+			$(".model").css("display","none");
+			$(".box3").css("display","none");
+			return false;
+		});
+		$("input[name=gender]").on('click', function() {
+			var gender = $(this).val();
+			$("#genderInput").val(gender);
+			$(".closeModel3").click();
+			return false;
+		});
 	</script>
 	
 </body>
