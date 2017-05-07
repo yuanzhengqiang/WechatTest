@@ -7,27 +7,27 @@
 	<title>体检项目选择</title>
 	<style>
 		@media screen and (min-width: 320px) {
-		    html {font-size: 14px;}
+		    html {font-size: 12px;}
 		}
 		 
 		@media screen and (min-width: 370px) {
-		    html {font-size: 16px;}
+		    html {font-size: 14px;}
 		}
 		 
 		@media screen and (min-width: 410px) {
-		    html {font-size: 18px;}
+		    html {font-size: 16px;}
 		}
 		 
 		@media screen and (min-width: 440px) {
-		    html {font-size: 20px;}
+		    html {font-size: 18px;}
 		}
 		 
 		@media screen and (min-width: 480px) {
-		    html {font-size: 24px;}
+		    html {font-size: 18px;}
 		}
 		 
 		@media screen and (min-width: 640px) {
-		    html {font-size: 30px;}
+		    html {font-size: 18px;}
 		}
 		body,html{
 			margin: 0px;
@@ -129,11 +129,12 @@
 			background-color: #5B8BC9;
 		}
 		.cost{
-			flex:3;
-			display: inline-block;
+			flex: 1;
+		    display: inline-block;
+		    text-align: center;
 		}
 		.des{
-			flex:2;
+			flex:1;
 			font-size: 0.7rem;
 			color: #7A7C88;
 			display:flex;
@@ -265,12 +266,12 @@
 		    box-shadow: 0px 0px 10px 1px #DDDDDD;
 		    overflow: hidden;
 		}
-		.hospitalName{
+		.medicalType{
 			height: 50px;
     		display:flex;
 			display:-webkit-flex;
 		}
-		.hospitalNameLeft{
+		.medicalTypeLeft{
 			flex: 1;
 		    display: inline-block;
 		    text-align: center;
@@ -286,7 +287,7 @@
 		    border: 3px solid #87C738;
 		    cursor: pointer;
 		}
-		.hospitalNameLeftImg{
+		.medicalTypeLeftImg{
 			width: 1.4rem;
     		height:1.4rem; 
     		position: relative;
@@ -296,7 +297,7 @@
 			-ms-transform: translateY(-40%);
 			transform: translateY(-40%);
 		}
-		.hospitalNameRight{
+		.medicalTypeRight{
 			flex: 1;
 		    text-align: center;
 		    font-size: 0.9rem;
@@ -307,6 +308,7 @@
 		    height: 45px;
 		    line-height: 45px;
 		    cursor: pointer;
+		    position: relative;
 		}
 		
 		.medicalName{
@@ -317,23 +319,16 @@
 			border-bottom: 1px solid #F2F2F2;
 		}
 		.medicalNameLeft{
-			flex: 3;
+			flex: 2;
 		    display: inline-block;
 		    text-align: left;
 		    vertical-align: sub;
-		    padding: 0px 10px;
 		    height: 50px;
 		}
 		.medicalNameLeftText{
-			position: relative;
-		    top: 50%;
-		    webkit-transform: translateY(-110%);
-		    -moz-transform: translateY(-110%);
-		    -ms-transform: translateY(-110%);
-		    transform: translateY(-110%);
+			line-height: 50px;
 		    color: #434B76;
-		    font-size: 0.8rem;
-		    margin-left: 5px;
+		    font-size: 0.85rem;
 		    font-weight: 700;
     	}
 		.detailsImg{
@@ -348,15 +343,46 @@
 			cursor: pointer;
 		}
 		.medicalNameCenter{
-			flex: 3;
+			flex: 5;
 		    text-align: left;
-		    padding-left: 10px;
+		}
+		.medicalNameCenterBox{
+			text-align: left;
+		    position: relative;
+		    top: 50%;
+    		webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+			border-right: 1px solid #f1f1f1;
+		}
+		.medicalNameCenterBoxTop{
+			text-align: left;
+		}
+		.medicalNameCenterBoxTopName{
+			font-size: 0.65rem;
+    		color: #5a5a5a;
+    		font-weight: 600;
+		}
+		.medicalNameCenterBoxTopDes{
+			width: 0.65rem;
+    		height: 0.65rem;
+		}
+		.medicalNameCenterBoxDesText{
+			font-size: 0.45rem;
+		    color: #cdcdcd;
+		    display: block;
+		    width: 100%;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
 		}
 		.medicalNameRight{
-		    flex: 2;
+		    flex: 1;
 		    display: inline-block;
 		    padding-right: 10px;
 		    text-align: right;
+		    min-width: 50px;
 		}
 		.medicalNameRightText{
 			height: 50px;
@@ -664,7 +690,29 @@
 		}
 		.unit{
 			font-size: 0.6rem;
-			margin-left: 2px;
+		    margin-left: 2px;
+		    color: #000;
+		    font-weight: 300;
+		}
+		.notActive{
+			background-color: #FFF;
+    		color: #87c738;
+    	}
+    	.isActive{
+    		background-color: #87c738;
+    		color: #FFF;
+    	}
+    	.hide{
+    		display: none;
+    	}
+    	.medicalNameLeftImg{
+			width: 0.9rem;
+		    height: 0.9rem;
+		    position: relative;
+		    top: 3px;
+		}
+		.flex3{
+			flex: 3;
 		}
 	</style>
 </head>
@@ -705,7 +753,7 @@
 						<div class="basisContentCenterBox">
 							<div class="basisContentCenterBoxTop">
 								<label  class="basisContentCenterBoxTopName">基础检查服务</label>
-								<img src="wechatImg/explain.png" class="basisContentCenterBoxTopDes">
+								<img src="wechatImg/explain.png" class="basisContentCenterBoxTopDes" title="常规检查">
 							</div>
 							<span class="basisContentCenterBoxDesText">常规检查</span>
 						</div>
@@ -717,109 +765,113 @@
 			</div>
 
 			<div class="medicalInfo">
-				<div class="hospitalName">
-					<div class="hospitalNameLeft">
-						<label class="hospitalNameRightText">肿瘤早期筛查</label>
+				<div class="medicalType">
+					<div class="medicalTypeLeft" id="tumour">
+						<label class="medicalTypeRightText">肿瘤早期筛查</label>
 						<span class="trigon"></span>
 					</div>
-					<div class="hospitalNameRight">
-						<label class="hospitalNameRightText">心脑血管疾病筛查</label>
+					<div class="medicalTypeRight" id="cardio">
+						<label class="medicalTypeRightText">心脑血管疾病筛查</label>
+						<span class="trigon hide"></span>
 					</div>
 				</div>
-				<div class="medicalName">
-					<div class="medicalNameLeft">
-						<img src="wechatImg/serviceCharge.png" class="hospitalNameLeftImg">
-						<label class="inlineBlock medicalNameLeftText">胃癌</label>
+				<div class="tumour">
+					<div class="medicalName">
+						<div class="medicalNameLeft">
+							<img src="wechatImg/notSelect.png" class="medicalNameLeftImg notSelect ">
+							<img src="wechatImg/selected.png" class="medicalNameLeftImg selected hide">
+							<label class="inlineBlock medicalNameLeftText">肿瘤套餐</label>
+						</div>
+						<div class="medicalNameCenter">
+							<div class="medicalNameCenterBox">
+								<div class="medicalNameCenterBoxTop">
+									<label  class="medicalNameCenterBoxTopName">多肿瘤标志物，肿瘤补充套餐</label>
+									<img src="wechatImg/explain.png" class="medicalNameCenterBoxTopDes" title="肝癌、食管癌、膀胱癌等...">
+								</div>
+								<span class="medicalNameCenterBoxDesText">肝癌、食管癌、膀胱癌等...</span>
+							</div>
+						</div>
+						<div class="medicalNameRight">
+							<label class="medicalNameRightText">500<span class="unit">元</span></label>
+						</div>
 					</div>
-					<div class="medicalNameCenter">
-						
+					<div class="medicalName">
+						<div class="medicalNameLeft">
+							<img src="wechatImg/notSelect.png" class="medicalNameLeftImg notSelect">
+							<img src="wechatImg/selected.png" class="medicalNameLeftImg selected hide">
+							<label class="inlineBlock medicalNameLeftText">脑部肿瘤</label>
+						</div>
+						<div class="medicalNameCenter">
+							<div class="medicalNameCenterBox">
+								<div class="medicalNameCenterBoxTop">
+									<label  class="medicalNameCenterBoxTopName">脑CT</label>
+									<img src="wechatImg/explain.png" class="medicalNameCenterBoxTopDes" title="长期化学致癌物及辐射接触肿瘤...">
+								</div>
+								<span class="medicalNameCenterBoxDesText">长期化学致癌物及辐射接触肿瘤...</span>
+							</div>
+						</div>
+						<div class="medicalNameRight">
+							<label class="medicalNameRightText">1000<span class="unit">元</span></label>
+						</div>
 					</div>
-					<div class="medicalNameRight">
-						<label class="medicalNameRightText">0</label>
+					<div class="medicalName">
+						<div class="medicalNameLeft">
+							<img src="wechatImg/notSelect.png" class="medicalNameLeftImg notSelect">
+							<img src="wechatImg/selected.png" class="medicalNameLeftImg selected hide">
+							<label class="inlineBlock medicalNameLeftText">肺癌</label>
+						</div>
+						<div class="medicalNameCenter">
+							<div class="medicalNameCenterBox">
+								<div class="medicalNameCenterBoxTop">
+									<label  class="medicalNameCenterBoxTopName">胸部CT</label>
+									<img src="wechatImg/explain.png" class="medicalNameCenterBoxTopDes" title="长期吸烟史、空气污染严重区域...">
+								</div>
+								<span class="medicalNameCenterBoxDesText">长期吸烟史、空气污染严重区域...</span>
+							</div>
+						</div>
+						<div class="medicalNameRight">
+							<label class="medicalNameRightText">500<span class="unit">元</span></label>
+						</div>
 					</div>
-				</div>
-				<div class="medicalName">
-					<div class="medicalNameLeft">
-						<img src="wechatImg/gastricCancer.png" class="hospitalNameLeftImg">
-						<label class="inlineBlock medicalNameLeftText">胃癌</label>
-					</div>
-					<div class="medicalNameCenter">
-						<label class="inlineBlock medicalNameCenterText">胃癌早期筛查</label>
-					</div>
-					<div class="medicalNameRight">
-						<label class="medicalNameRightText">550</label>
-					</div>
-				</div>
-				<div class="medicalName">
-					<div class="medicalNameLeft">
-						<img src="wechatImg/gastricCancer.png" class="hospitalNameLeftImg">
-						<label class="inlineBlock medicalNameLeftText">胃癌</label>
-					</div>
-					<div class="medicalNameCenter">
-						<label class="inlineBlock medicalNameCenterText">胃癌中期筛查</label>
-					</div>
-					<div class="medicalNameRight">
-						<label class="medicalNameRightText">550</label>
-					</div>
-				</div>
-				<div class="medicalName">
-					<div class="medicalNameLeft">
-						<img src="wechatImg/gastricCancer.png" class="hospitalNameLeftImg">
-						<label class="inlineBlock medicalNameLeftText">胃癌</label>
-					</div>
-					<div class="medicalNameCenter">
-						<label class="inlineBlock medicalNameCenterText">胃癌晚期筛查</label>
-					</div>
-					<div class="medicalNameRight">
-						<label class="medicalNameRightText">550</label>
-					</div>
-				</div>
-				<div class="medicalName">
-					<div class="medicalNameLeft">
-						<img src="wechatImg/lung.png" class="hospitalNameLeftImg">
-						<label class="inlineBlock medicalNameLeftText">肺癌</label>
-					</div>
-					<div class="medicalNameCenter">
-						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
-					</div>
-					<div class="medicalNameRight">
-						<label class="medicalNameRightText">1000</label>
-					</div>
-				</div>
-				<div class="medicalName">
-					<div class="medicalNameLeft">
-						<img src="wechatImg/lung.png" class="hospitalNameLeftImg">
-						<label class="inlineBlock medicalNameLeftText">肺癌</label>
-					</div>
-					<div class="medicalNameCenter">
-						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
-					</div>
-					<div class="medicalNameRight">
-						<label class="medicalNameRightText">1000</label>
-					</div>
-				</div>
-				<div class="medicalName">
-					<div class="medicalNameLeft">
-						<img src="wechatImg/lung.png" class="hospitalNameLeftImg">
-						<label class="inlineBlock medicalNameLeftText">肺癌</label>
-					</div>
-					<div class="medicalNameCenter">
-						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
-					</div>
-					<div class="medicalNameRight">
-						<label class="medicalNameRightText">1000</label>
+					<div class="medicalName">
+						<div class="medicalNameLeft">
+							<img src="wechatImg/notSelect.png" class="medicalNameLeftImg notSelect">
+							<img src="wechatImg/selected.png" class="medicalNameLeftImg selected hide">
+							<label class="inlineBlock medicalNameLeftText">胃癌</label>
+						</div>
+						<div class="medicalNameCenter">
+							<div class="medicalNameCenterBox">
+								<div class="medicalNameCenterBoxTop">
+									<label  class="medicalNameCenterBoxTopName">胃癌早期筛查</label>
+									<img src="wechatImg/explain.png" class="medicalNameCenterBoxTopDes" title="长期烟酒史、慢性胃部疾病...">
+								</div>
+								<span class="medicalNameCenterBoxDesText">长期烟酒史、慢性胃部疾病...</span>
+							</div>
+						</div>
+						<div class="medicalNameRight">
+							<label class="medicalNameRightText">500<span class="unit">元</span></label>
+						</div>
 					</div>
 				</div>
-				<div class="medicalName">
-					<div class="medicalNameLeft">
-						<img src="wechatImg/lung.png" class="hospitalNameLeftImg">
-						<label class="inlineBlock medicalNameLeftText">肺癌</label>
-					</div>
-					<div class="medicalNameCenter">
-						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
-					</div>
-					<div class="medicalNameRight">
-						<label class="medicalNameRightText">1000</label>
+				<div class="cardio">
+					<div class="medicalName">
+						<div class="medicalNameLeft flex3">
+							<img src="wechatImg/notSelect.png" class="medicalNameLeftImg notSelect">
+							<img src="wechatImg/selected.png" class="medicalNameLeftImg selected hide">
+							<label class="inlineBlock medicalNameLeftText">心血管疾病</label>
+						</div>
+						<div class="medicalNameCenter">
+							<div class="medicalNameCenterBox">
+								<div class="medicalNameCenterBoxTop">
+									<label  class="medicalNameCenterBoxTopName">彩色心超</label>
+									<img src="wechatImg/explain.png" class="medicalNameCenterBoxTopDes" title="(冠心病、心肌梗塞)持续出现...">
+								</div>
+								<span class="medicalNameCenterBoxDesText">(冠心病、心肌梗塞)持续出现...</span>
+							</div>
+						</div>
+						<div class="medicalNameRight">
+							<label class="medicalNameRightText">800<span class="unit">元</span></label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -828,21 +880,14 @@
 		<div class="footer">
 			<div class="costInfo">
 				<div class="cost">
-					<div class="costName">总额:</div>
-					<div class="costNum">1500</div>
+					<div class="costNum">3<span class="unit">项</span></div>
 				</div>
 				<div class="des">
-					<div class="desLift">
-						<p class="margin0">先体验</p>
-						<p class="margin0">后付款</p>
-					</div>
-					<div class="desRight">
-						<img src="wechatImg/question.png" width="22px" height="22px" class="desRightImg">
-					</div>
+					<div class="costNum">1500<span class="unit">元</span></div>
 				</div>
 			</div>
 			<div class="orders">
-				<button class="btn">立即下单</button>
+				<button class="btn">去结算</button>
 			</div>
 		</div>
 	</div>
@@ -865,14 +910,14 @@
 
 	<div class="box2">
 		<div class="modelHeader2">
-			<span style="display:inline-block;">关于基础检查服务</span>
+			<span style="display:inline-block;" id="box2Header">关于基础检查服务</span>
 			<div class="closeModel2">
 				<img src="wechatImg/close.png" height="30" width="30" alt="&times" class="close2">
 			</div>
 		</div>
     	<div class="modelContent2">
 			<div class="modelContentInfo2 text-center">
-				<span>常规检查</span>
+				<span id="ContentInfo2">常规检查</span>
 			</div>
     	</div>
 	</div>
@@ -880,29 +925,23 @@
 	<div class="model"></div>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript">
-		$(".desRightImg").click(function(){
-			$(".model").css("display","block");
-			$(".box1").css("display","block");
-			return false;
+		$(document).ready(function(){
+			$("#tumour").click();
 		});
-		$(".btn").click(function(){
-			$(".model").css("display","block");
-			$(".box1").css("display","block");
-			return false;
-		});
-		$(".model").click(function(){
-			$(".model").css("display","none");
-			$(".box1").css("display","none");
-			$(".box2").css("display","none");
-			return false;
-		});
-		$(".closeModel1").click(function(){
-			$(".model").css("display","none");
-			$(".box1").css("display","none");
-			return false;
-		});
-
 		$(".basisContentCenterBoxTopDes").click(function(){
+			var title = $(this).attr("title");
+			var header = $(this).siblings('label').text();
+			$("#box2Header").text("关于" + header);
+			$("#ContentInfo2").text(title);
+			$(".model").css("display","block");
+			$(".box2").css("display","block");
+			return false;
+		});
+		$(".medicalNameCenterBoxTopDes").click(function(){
+			var title = $(this).attr("title");
+			var header = $(this).siblings('label').text();
+			$("#box2Header").text("关于" + header);
+			$("#ContentInfo2").text(title);
 			$(".model").css("display","block");
 			$(".box2").css("display","block");
 			return false;
@@ -912,6 +951,27 @@
 			$(".box2").css("display","none");
 			return false;
 		});
+
+		//切换肿瘤和心脑血管
+		$("#cardio").on('click', function() {
+			$(this).addClass('isActive').removeClass('notActive').find(".trigon").show();
+			$("#tumour").removeClass('isActive').addClass('notActive').find(".trigon").hide();
+			$(".cardio").show().siblings('.tumour').hide();
+		});
+		$("#tumour").on('click', function() {
+			$(this).addClass('isActive').removeClass('notActive').find(".trigon").show();
+			$("#cardio").removeClass('isActive').addClass('notActive').find(".trigon").hide();
+			$(".tumour").show().siblings('.cardio').hide();
+		});
+
+		//选择
+		$(".notSelect").on('click', function() {
+			$(this).hide().siblings('.selected').show();
+		});	
+		$(".selected").on('click', function() {
+			$(this).hide().siblings('.notSelect').show();
+		});		
+
 	</script>
 	
 </body>
