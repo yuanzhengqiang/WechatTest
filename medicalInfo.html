@@ -517,7 +517,7 @@
 <body>
 	<div class="container-fluid">
 		<div class="header">
-			<div class="headerItem1 text-left">
+			<div class="headerItem1 text-left" onclick="return()">
 				<img src="wechatImg/return.png" width="25px" height="25px" class="marginTop5">
 			</div>
 			<div class="headerItem3 text-center">
@@ -752,7 +752,9 @@
 			$(".box2").css("display","none");
 			return false;
 		});
-
+		function return(){
+			window.location.href="https://yuanzhengqiang.github.io/WechatTest/selectMedicalInfo.html"; 
+		}
 	</script>
 	
 </body>
