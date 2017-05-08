@@ -188,34 +188,7 @@
 	
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript">
-		$(".desRightImg").click(function(){
-			$(".model").css("display","block");
-			$(".box1").css("display","block");
-			return false;
-		});
-		$(".model").click(function(){
-			$(".model").css("display","none");
-			$(".box1").css("display","none");
-			$(".box2").css("display","none");
-			$(".box3").css("display","none");
-			return false;
-		});
-		$(".closeModel1").click(function(){
-			$(".model").css("display","none");
-			$(".box1").css("display","none");
-			return false;
-		});
-
-		$(".seviceCostImg").click(function(){
-			$(".model").css("display","block");
-			$(".box2").css("display","block");
-			return false;
-		});
-		$(".closeModel2").click(function(){
-			$(".model").css("display","none");
-			$(".box2").css("display","none");
-			return false;
-		});
+		
 		function returnPage(){
 			window.location.href="https://yuanzhengqiang.github.io/WechatTest/medicalInfo.html"; 
 		}
@@ -228,23 +201,6 @@
 		}
 		
 
-		//性别
-		$("#genderInput").click(function(){
-			$(".model").css("display","block");
-			$(".box3").css("display","block");
-			return false;
-		});
-		$(".closeModel3").click(function(){
-			$(".model").css("display","none");
-			$(".box3").css("display","none");
-			return false;
-		});
-		$("input[name=gender]").on('click', function() {
-			var gender = $(this).val();
-			$("#genderInput").val(gender);
-			$(".closeModel3").click();
-			return false;
-		});
 		(function (doc, win) {
 		    // 分辨率Resolution适配
 		    var docEl = doc.documentElement,
