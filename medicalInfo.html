@@ -77,7 +77,7 @@
 		.content{
 			height: auto;
 			width: 100%;
-			background-color: #F1F1F1;
+			background-color: #f7f7f7;
 			overflow-y:auto; 
 			position: absolute;
 			top: 0.32rem;
@@ -103,6 +103,7 @@
 			flex:2;
 			display: inline-block;
 			background-color: #5B8BC9;
+			font-size: 0.16rem;
 		}
 		.cost{
 			flex:3;
@@ -110,7 +111,7 @@
 		}
 		.des{
 			flex:3;
-			font-size: 0.11rem;
+			font-size: 0.08rem;
 			color: #7A7C88;
 			display:flex;
 			display:-webkit-flex;
@@ -132,12 +133,12 @@
 		.desRightImg{
 			cursor: pointer;
 		    margin-top: 0.12rem;
-		    width: 0.22rem;
-		    height: 0.22rem;
+		    width: 0.20rem;
+		    height: 0.20rem;
 		}
 		.costNum{
-			flex: 2;
-		    font-size: 0.2rem;
+			flex: 3;
+		    font-size: 0.18rem;
 		    display: inline-block;
 		    font-weight: 700;
 		    color: #79B036;
@@ -146,10 +147,10 @@
 		}
 		.costName{
 			flex: 2;
-		    font-size: 0.14rem;
+		    font-size: 0.12rem;
 		    display: inline-block;
 		    font-weight: 700;
-		    letter-spacing: 0.03rem;
+		    letter-spacing: 0.01rem;
 		    height: 0.45rem;
 		    line-height: 0.45rem;
 		    font-family: SimHei;
@@ -164,7 +165,7 @@
 		    color: #FFF;
 		    letter-spacing: 0.03rem;
 		    outline: none;
-		    font-size: 0.2rem;
+		    font-size: 0.14rem;
 		    -webkit-appearance : none ;  /*解决iphone safari上的圆角问题*/
 		}
 
@@ -380,20 +381,22 @@
 		    font-size: 0.16rem;
 		}
 		.modelHeader1{
-			padding: 0.15rem 0.2rem;
+			padding: 0.15rem 0rem;
 			color: #FFF;
-			font-size: 0.2rem;
+			font-size: 0.18rem;
 			min-height: 0.25rem;
 		}
 		.modelHeader2{
-			padding: 0.15rem 0.2rem;
+			padding: 0.15rem 0rem;
 			color: #FFF;
-			font-size: 0.2rem;
+			font-size: 0.18rem;
+			min-height: 0.25rem;
 		}
 		.modelHeader3{
-			padding: 0.15rem 0.2rem;
+			padding: 0.15rem 0rem;
 			color: #FFF;
-			font-size: 0.2rem;
+			font-size: 0.18rem;
+			min-height: 0.25rem;
 		}
 		.close1{
 			cursor: pointer;
@@ -543,6 +546,11 @@
 		.labelInfo{
 			margin: 0rem 0.2rem;
 		}
+		.unit{
+			font-size: 0.055rem;
+		    color: #000;
+		    font-weight: 300;
+		}
 	</style>
 </head>
 <body>
@@ -605,7 +613,7 @@
 						<img src="wechatImg/question.png" class="seviceCostImg">
 					</div>
 					<div class="medicalNameRight">
-						<label class="medicalNameRightText">0</label>
+						<label class="medicalNameRightText">0<span class="unit">元</span></label>
 					</div>
 				</div>
 				<div class="medicalName">
@@ -617,7 +625,7 @@
 						<label class="inlineBlock medicalNameCenterText">胃癌早期筛查</label>
 					</div>
 					<div class="medicalNameRight">
-						<label class="medicalNameRightText">550</label>
+						<label class="medicalNameRightText">550<span class="unit">元</span></label>
 					</div>
 				</div>
 				<div class="medicalName">
@@ -629,7 +637,7 @@
 						<label class="inlineBlock medicalNameCenterText">胃癌中期筛查</label>
 					</div>
 					<div class="medicalNameRight">
-						<label class="medicalNameRightText">550</label>
+						<label class="medicalNameRightText">550<span class="unit">元</span></label>
 					</div>
 				</div>
 				<div class="medicalName">
@@ -641,7 +649,7 @@
 						<label class="inlineBlock medicalNameCenterText">胃癌晚期筛查</label>
 					</div>
 					<div class="medicalNameRight">
-						<label class="medicalNameRightText">550</label>
+						<label class="medicalNameRightText">550<span class="unit">元</span></label>
 					</div>
 				</div>
 				<div class="medicalName">
@@ -653,7 +661,7 @@
 						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
 					</div>
 					<div class="medicalNameRight">
-						<label class="medicalNameRightText">1000</label>
+						<label class="medicalNameRightText">1000<span class="unit">元</span></label>
 					</div>
 				</div>
 				<div class="medicalName">
@@ -665,7 +673,7 @@
 						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
 					</div>
 					<div class="medicalNameRight">
-						<label class="medicalNameRightText">1000</label>
+						<label class="medicalNameRightText">1000<span class="unit">元</span></label>
 					</div>
 				</div>
 				<div class="medicalName">
@@ -677,7 +685,7 @@
 						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
 					</div>
 					<div class="medicalNameRight">
-						<label class="medicalNameRightText">1000</label>
+						<label class="medicalNameRightText">1000<span class="unit">元</span></label>
 					</div>
 				</div>
 				<div class="medicalName">
@@ -689,7 +697,7 @@
 						<label class="inlineBlock medicalNameCenterText">胸部CT</label>
 					</div>
 					<div class="medicalNameRight">
-						<label class="medicalNameRightText">1000</label>
+						<label class="medicalNameRightText">1000<span class="unit">元</span></label>
 					</div>
 				</div>
 			</div>
@@ -698,7 +706,7 @@
 		<div class="footer">
 			<div class="costInfo">
 			<div class="costName">总额:</div>
-			<div class="costNum">1500</div>
+			<div class="costNum">1500<span class="unit">元</span></div>
 				
 				<div class="des">
 					<div class="desLift">
@@ -706,7 +714,7 @@
 						<p class="margin0">后付款</p>
 					</div>
 					<div class="desRight">
-						<img src="wechatImg/question.png" width="22px" height="22px" class="desRightImg">
+						<img src="wechatImg/question.png" class="desRightImg">
 					</div>
 				</div>
 			</div>
