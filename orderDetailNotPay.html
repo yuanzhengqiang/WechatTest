@@ -290,6 +290,9 @@
 		    position: relative;
 		    top: 0.03rem;
 		}
+		.hide{
+			display: none;
+		}
 		.labelInfo{
 			margin: 0rem 0.2rem;
 		}
@@ -424,6 +427,17 @@
 		    top: 0.1rem;
 		    border-radius: 0.15rem;
 		}
+		.padding2015{
+			padding: 0.2rem 0.15rem;
+		}
+		.medicalConclusion{
+			font-size: 0.12rem;
+			height: auto;
+			line-height: 0.18rem;
+		}
+		.heightAuto{
+			height: auto;
+		}
 	</style>
 </head>
 <body>
@@ -498,13 +512,10 @@
 					<label class="progressDesDes">2017.5.30</label>
 				</div>
 			</div>
-
-			<div class="medicalInfo">
-				<div class="shade">
-					<img src="wechatImg/notPay.png" class="notPay">
-					<label class="notPayDes">支付成功后查看体检结论</label>
-				</div>
-				<div class="medicalName dim">
+			
+			<!-- 	下单成功/体检完成/取消 -->
+			<div class="medicalInfo hide">
+				<div class="medicalName">
 					<div class="medicalNameLeft">
 						<img src="wechatImg/gastricCancer.png" class="hospitalNameLeftImg">
 						<label class="inlineBlock medicalNameLeftText">胃癌</label>
@@ -516,7 +527,7 @@
 						<label class="medicalNameRightText">550<span class="unit">元</span></label>
 					</div>
 				</div>
-				<div class="medicalName dim">
+				<div class="medicalName">
 					<div class="medicalNameLeft">
 						<img src="wechatImg/gastricCancer.png" class="hospitalNameLeftImg">
 						<label class="inlineBlock medicalNameLeftText">胃癌</label>
@@ -528,7 +539,7 @@
 						<label class="medicalNameRightText">550<span class="unit">元</span></label>
 					</div>
 				</div>
-				<div class="medicalName dim">
+				<div class="medicalName">
 					<div class="medicalNameLeft">
 						<img src="wechatImg/gastricCancer.png" class="hospitalNameLeftImg">
 						<label class="inlineBlock medicalNameLeftText">胃癌</label>
@@ -540,7 +551,7 @@
 						<label class="medicalNameRightText">550<span class="unit">元</span></label>
 					</div>
 				</div>
-				<div class="medicalName dim">
+				<div class="medicalName">
 					<div class="medicalNameLeft">
 						<img src="wechatImg/lung.png" class="hospitalNameLeftImg">
 						<label class="inlineBlock medicalNameLeftText">肺癌</label>
@@ -553,12 +564,47 @@
 					</div>
 				</div>
 			</div>
+			
+			<!-- 生成报告-已付款 -->
+			<div class="medicalInfo hide">
+				<div class="shade hide">
+					<img src="wechatImg/notPay.png" class="notPay">
+					<label class="notPayDes">支付成功后查看体检结论</label>
+				</div>
+				<div class="medicalName padding2015 heightAuto">
+					<div class="medicalConclusion">
+						1、合理搭配营养素：在限制总热量的情况下，三大营养素——碳水化合物提供的热量应占总热量的55%-60%，蛋白质应占总热量的15%-20%，脂肪应占总热量的30%以下。 <br>a、碳水化合物：宜食用高膳食纤维的粗粮,如：燕麦、荞麦、薏米、黑米、黄豆、黑豆、绿豆等。建议膳食纤维每日不少于15-20克。<br>b、蛋白质：选择优质蛋白，如瘦肉、家禽类、鱼虾、鸡蛋、牛奶、豆制品等。应保证每天摄入一个鸡蛋（50克），一袋奶（250ml）<br>c、脂肪：选择植物油作为烹调油，加上动物食物中所含的脂肪已足够补充每日所需。
+					</div>
+				</div>
+			</div>
+
+			<!-- 生成报告-未付款 -->
+			<div class="medicalInfo">
+				<div class="shade">
+					<img src="wechatImg/notPay.png" class="notPay">
+					<label class="notPayDes">支付成功后查看体检结论</label>
+				</div>
+				<div class="medicalName padding2015 heightAuto">
+					<div class="medicalConclusion dim">
+						1、合理搭配营养素：在限制总热量的情况下，三大营养素——碳水化合物提供的热量应占总热量的55%-60%，蛋白质应占总热量的15%-20%，脂肪应占总热量的30%以下。 <br>a、碳水化合物：宜食用高膳食纤维的粗粮,如：燕麦、荞麦、薏米、黑米、黄豆、黑豆、绿豆等。建议膳食纤维每日不少于15-20克。<br>b、蛋白质：选择优质蛋白，如瘦肉、家禽类、鱼虾、鸡蛋、牛奶、豆制品等。应保证每天摄入一个鸡蛋（50克），一袋奶（250ml）<br>c、脂肪：选择植物油作为烹调油，加上动物食物中所含的脂肪已足够补充每日所需。
+					</div>
+				</div>
+			</div>
 		</div>
 		
 		<div class="footer">
-			<div class="orders">
+			<div class="orders hide">
 				<button class="btn" onclick="turnPage()">付款</button>
 			</div>
+
+			<!-- 生成报告-已付款 -->
+			<div class="orders">
+				<button class="btn" onclick="turnqingdanPage()">体检报告清单</button>
+			</div>
+			<div class="orders">
+				<button class="btn" onclick="turnwanzhengPage()">完成体检报告</button>
+			</div>
+			<!--       -->
 		</div>
 	</div>
 	
@@ -574,6 +620,14 @@
 
 		function turnCaretakersPage() {
 			window.location.href="https://yuanzhengqiang.github.io/WechatTest/caretakers.html"; 
+		}
+
+		function turnqingdanPage(){
+			window.location.href="https://yuanzhengqiang.github.io/WechatTest/orderDetail.html"; 
+		}
+
+		function turnwanzhengPage(){
+			window.location.href="https://yuanzhengqiang.github.io/WechatTest/expressage.html"; 
 		}
 		(function (doc, win) {
 		    // 分辨率Resolution适配
