@@ -827,7 +827,13 @@
 		}
 
 		function turnPage(){
-			window.location.href="https://yuanzhengqiang.github.io/WechatTest/confirmation.html"; 
+			var time  = new Date().getTime();
+				if(time%2 == 0)  
+			   {  
+			      window.location.href="https://yuanzhengqiang.github.io/WechatTest/confirmation.html"; 
+			   }else{  
+			      window.location.href="https://yuanzhengqiang.github.io/WechatTest/confirmationFailure.html"; 
+			   }
 		}
 
 		//性别
