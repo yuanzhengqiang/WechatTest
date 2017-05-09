@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<title>历史订单</title>
+	<title>报告详情</title>
 	<style>
 		html{font-size: 100px;}
         body{
@@ -98,80 +98,187 @@
 		.top11{
 			top: 0.11rem;
 		}
-		.orderInfo{
-			height: auto;
-		    margin: 0.2rem 0.16rem;
-		    border-radius: 0.06rem;
-		    overflow: hidden;
-		    box-shadow: 0px 0px 0.1rem 0.01rem #DDDDDD;
-
-		}
-		.orderNum{
-			height: 0.4rem;
-			background-color: #92cc4a;
-			font-size: 0.16rem;
-		}
-		.orderInfoType{
-			height: 0.45rem;
-			border-bottom: 1px solid #f1f1f1;
-			background-color: #FFF;
-			display:flex;
-			display:-webkit-flex;
-			font-size: 0.16rem;
-		}
-		.orderInfoDes{
-			height: 0.45rem;
-			background-color: #FFF;
-			font-size: 0.16rem;
-			display:flex;
-			display:-webkit-flex;
-		}
-		.orderNumInfo{
-			font-size: 0.12rem;
-		    height: 0.4rem;
-		    line-height: 0.4rem;
-		    color: #FFF;
-		    margin-left: 0.18rem
-		}
-		.orderTime{
-			flex: 4;
-			text-align: center;
-			height: 0.45rem;
-			line-height: 0.45rem;
-		}
-		.medicalTime{
-			flex: 4;
-			text-align: center;
-			height: 0.45rem;
-			line-height: 0.45rem;
-		}
-		.medicaler{
-			flex: 3;
-			text-align: center;
-			height: 0.45rem;
-			line-height: 0.45rem;
-		}
 		.progress{
 			flex: 4;
 			text-align: center;
 			height: 0.45rem;
 			line-height: 0.45rem;
 		}
-		.orderName{
-			font-size: 0.12rem;
-		    color: #414972;
-		    height: 0.45rem;
-		    line-height: 0.45rem;
-		    font-weight: 600;
-		    font-family: Microsoft YaHei;
+		.expressageInfo{
+			height: auto;
+		    margin: 0.05rem 0.16rem;
+		    border-radius: 0.06rem;
+		    overflow: hidden;
+		    box-shadow: 0px 0px 0.1rem 0.01rem #DDDDDD;
+			display:flex;
+			display:-webkit-flex;
 		}
-		.orderDes{
+		.expressageLeft{
+			flex: 2;
+			background:-moz-linear-gradient(left,#89ca39,#91d33f);
+			background:-webkit-linear-gradient(left,#89ca39,#91d33f);
+			background:linear-gradient(left,#89ca39,#91d33f);
+			text-align: center;
+		}
+		.expressageLeftImg{
+			width: 0.24rem;
+			height: 0.24rem;
+			display: block;
+		}
+		.expressageLeftText{
+			font-size: 0.12rem;
+		}
+		.expressageRight{
+			flex: 5;
+			background-color: #FFF;
+		}
+		.expressageRightTop{
+			height: 0.6rem;
+			display:flex;
+			display:-webkit-flex;
+			font-size: 0.16rem;
+		}
+		.expressageRightTopLeft{
+			height: 0.6rem;
+			flex: 2;
+			text-align: left;
+			margin-left: 0.15rem;
+		}
+		.expressageRightTopRight{
+			height: 0.6rem;
+			flex: 3;
+			text-align: right;
+			margin-right: 0.15rem;
+		}
+		.orderName{
+			color: #aeaeae;
+		    font-size: 0.12rem;
+		    display: block;
+		    height: 0.12rem;
+		    line-height: 0.12rem;
+		    margin-top: 0.15rem;
+		}
+		.orderNameDes{
+			color: #414972;
+		    font-size: 0.12rem;
+		    display: block;
+		    height: 0.12rem;
+		    line-height: 0.12rem;
+		    margin-top: 0.08rem;
+		}
+		.expressageRightBottom{
+			min-height: 0.5rem;
+			text-align: left;
+			margin: 0rem 0.15rem;
+			font-size: 0.16rem;
+		}
+		.siteName{
+			color:#aeaeae;
+			font-size: 0.12rem;
+			display: block;
+			margin-top: 0.1rem;
+		}		
+		.siteDes{
+			font-size: 0.12rem;
+			display: block;
+			margin-top: 0.06rem;
+			color: #414972;
+		}
+		.expressageLeftImg{
+			width: 0.24rem;
+		    height: 0.24rem;
+		    display: block;
+		    margin: 0 auto;
+		    margin-top: 0.35rem;
+		}
+		.expressageLeftText{
+			font-size: 0.12rem;
+		    height: 0.2rem;
+		    line-height: 0.2rem;
+		    color: #FFF;
+		    display: block;
+		    margin-top: 0.05rem;
+		}
+		.border1{
+			background: -webkit-linear-gradient(left,#fff,#e9e9e9,#FFF);
+		    height: 0.01rem;
+		    width: 100%;
+		}
+		.downloadInfo{
+			height: auto;
+		    margin: 0.2rem 0.16rem;
+		    border-radius: 0.06rem;
+		    overflow: hidden;
+		    box-shadow: 0px 0px 0.1rem 0.01rem #DDDDDD;
+			display:flex;
+			display:-webkit-flex;
+		}
+		.downloadLeft{
+			flex: 2;
+			background:-moz-linear-gradient(left,#64a2d8,#5194cd);
+			background:-webkit-linear-gradient(left,#64a2d8,#5194cd);
+			background:linear-gradient(left,#64a2d8,#5194cd);
+			text-align: center;
+			height: 0.8rem;
+		}
+		.downloadLeftImg{
+			width: 0.24rem;
+		    height: 0.24rem;
+		    display: block;
+		    margin: 0 auto;
+		    margin-top: 0.16rem;
+		}
+		.downloadLeftText{
+			font-size: 0.12rem;
+		    height: 0.2rem;
+		    line-height: 0.2rem;
+		    color: #FFF;
+		    display: block;
+		    margin-top: 0.05rem;
+		}
+		.downloadRight{
+			flex: 5;
+			background-color: #FFF;
+			display:flex;
+			display:-webkit-flex;
+			height: 0.8rem;
+		}
+		.downloadRightLeft{
+			margin-left: 0.15rem;
+			width: 1.5rem;
+			text-align: left;
+			flex: 9;
+		}
+		.downloadRightRight{
+			margin-right: 0.15rem;
+			width: 0.16rem;
+			height: 0.16rem;
+			text-align: right;
+			flex: 2;
+			font-size: 0.16rem;
+		}
+		.downloadRightImg{
+			width: 0.16rem;
+			height: 0.16rem;
+			margin-top: 0.32rem;
+		}
+		.downloadRightLeftDes{
+			color: #414972;
+		    font-size: 0.12rem;
+		    display: block;
+		    height: 0.12rem;
+		    line-height: 0.2rem;
+		    margin-top: 0.2rem;
+		}
+		.detail{
+			margin: 0 auto;
+		    text-align: center;
+		    font-size: 0.16rem;
+		    margin-top: 0.8rem;
+		}
+		.detailText{
 			font-size: 0.1rem;
-		    color: #414972;
-		    height: 0.45rem;
-		    line-height: 0.45rem;
-		    font-weight: 600;
-		    font-family: SimHei ;
+			color: #c8c8c8;
 		}
 	</style>
 </head>
@@ -182,80 +289,58 @@
 	            <img src="wechatImg/return.png" class="headerImg left0" onclick="returnPage()">
 	        </span>
 	        <span class="headerItem3 text-center">
-	            <label class="headerName">历史订单</label>
+	            <label class="headerName">报告详情</label>
 	        </span>  
 	        <span class="headerItem1 text-right">
 	            <img src="wechatImg/service.png" class = "headerImg right0">
 	        </span>
 	    </div>
-
+		
+		
 		<div class="content">
-			<div class="orderInfo" onclick="turnPageFailure()">
-				<div class="orderNum">
-					<label class="orderNumInfo">订单编号:<span>95452156545</span></label>
+			<div class="detail">
+				<span class="detailText">体检资料（发票及体检报告等）快递信息</span>
+			</div>
+			<div class="expressageInfo">
+				<div class="expressageLeft">
+					<img src="wechatImg/expressage.png" class="expressageLeftImg">
+					<label class="expressageLeftText" class="expressageLeftText">快递地址</label>
 				</div>
-				<div class="orderInfoType">
-					<div class="orderTime">
-						<label class="orderName">下单时间</label>
+				<div class="expressageRight">
+					<div class="expressageRightTop">
+						<div class="expressageRightTopLeft">
+							<label class="orderName">姓名</label>
+							<label class="orderNameDes">张三</label>
+						</div>
+						<div class="expressageRightTopRight">
+							<label class="orderName">联系方式</label>
+							<label class="orderNameDes">13999999999</label>
+						</div>
 					</div>
-					<div class="medicalTime">
-						<label class="orderName">体检时间</label>
-					</div>
-					<div class="medicaler">
-						<label class="orderName">体检人</label>
-					</div>
-					<div class="progress">
-						<label class="orderName">体检进度</label>
-					</div>
-				</div>
-				<div class="orderInfoDes">
-					<div class="orderTime">
-						<label class="orderDes">2017.3.4</label>
-					</div>
-					<div class="medicalTime">
-						<label class="orderDes">2017.3.12</label>
-					</div>
-					<div class="medicaler">
-						<label class="orderDes">张三</label>
-					</div>
-					<div class="progress">
-						<label class="orderDes">等待检查</label>
+					<div class="border1"></div>
+					<div class="expressageRightBottom">
+						<label class="siteName">地址</label>
+						<label class="siteDes">江苏省 苏州市 昆山区 什么街</label>
 					</div>
 				</div>
 			</div>
-			<div class="orderInfo" onclick="turnPageSuccess()">
-				<div class="orderNum">
-					<label class="orderNumInfo">订单编号:<span>95452336545</span></label>
+			<div class="downloadInfo">
+				<div class="downloadLeft">
+					<img src="wechatImg/download.png" class="downloadLeftImg">
+					<label class="downloadLeftText" class="downloadLeftText">快递地址</label>
 				</div>
-				<div class="orderInfoType">
-					<div class="orderTime">
-						<label class="orderName">下单时间</label>
-					</div>
-					<div class="medicalTime">
-						<label class="orderName">体检时间</label>
-					</div>
-					<div class="medicaler">
-						<label class="orderName">体检人</label>
-					</div>
-					<div class="progress">
-						<label class="orderName">体检进度</label>
-					</div>
-				</div>
-				<div class="orderInfoDes">
-					<div class="orderTime">
-						<label class="orderDes">2017.3.6</label>
-					</div>
-					<div class="medicalTime">
-						<label class="orderDes">2017.3.21</label>
-					</div>
-					<div class="medicaler">
-						<label class="orderDes">李四</label>
-					</div>
-					<div class="progress">
-						<label class="orderDes">报告生成</label>
+				<div class="downloadRight">
+					<div class="downloadRight">
+						<div class="downloadRightLeft">
+							<label class="downloadRightLeftDes">体检报告完整内容PDF下载链接及在浏览器打开说明</label>
+						</div>
+						<div class="downloadRightRight">
+							<img src="wechatImg/lead.png" class="downloadRightImg">
+						</div>
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</div>
 	
