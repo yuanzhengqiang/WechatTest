@@ -427,6 +427,12 @@
 		.hide{
 			display: none;
 		}
+		.orders{
+			flex:2;
+			display: inline-block;
+			background-color: #5B8BC9;
+			font-size: 0.16rem;
+		}
 	</style>
 </head>
 <body  id="body" class="hide">
@@ -550,7 +556,15 @@
 				</div>
 			</div>
 		</div>
-		
+		<div class="footer">
+			<div class="orders hide">
+				<button class="btnLeft" onclick="turnqingdanPage()"><img src="wechatImg/left.png" class="leftImg">体检项目清单</button>
+			</div>
+			<div class="orders hide">
+				<button class="btnRight" onclick="turnwanzhengPage()">完整体检报告<img src="wechatImg/right.png" class="rightImg"></button>
+			</div>
+			<!--       -->
+		</div>
 		
 	</div>
 	<script type="text/javascript" src="js/jquery.js"></script>
