@@ -237,7 +237,7 @@
 		}
 		.medicalNameCenterBoxDesText{
 			font-size: 0.09rem;
-		    color: #858585;
+		    color: #bfbfbf;
 		    display: block;
 		    width: 100%;
 		    white-space: nowrap;
@@ -557,7 +557,7 @@
 			font-size: 0.055rem;
 		    color: #414972;
 		    font-weight: 300;
-		    margin-left:0.02rem; 
+		    margin-left:0.01rem; 
 		}
 		.unit7{
 			font-size: 0.07rem;
@@ -876,15 +876,15 @@
 		});
 
 		//选择
-		$(".medicalNameLeft").on('click', function() {
-			$(this).find("img").toggle();
+		$(".medicalNameLeftText").on('click', function() {
+			$(this).parents(".medicalName").find('.medicalNameCenterBox').click();;
 		});
-		/*$(".notSelect").on('click', function() {
+		$(".notSelect").on('click', function() {
 			$(this).hide().siblings('.selected').show();
 		});
 		$(".selected").on('click', function() {
 			$(this).hide().siblings('.notSelect').show();
-		});		*/
+		});	
 		function turnPage(){
 			window.location.href="https://yuanzhengqiang.github.io/WechatTest/medicalInfo.html"; 
 		}
