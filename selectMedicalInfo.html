@@ -310,9 +310,9 @@
 		    width: 75vw;
 		    min-width: 2rem;
 		    height: auto;
-		    border-radius: 0.1rem;
-		    padding: 0.3rem;
+		    padding: 0.1rem 0.2rem;
 		    font-size: 0.16rem;
+		    min-height: 1.5rem;
 		}
 		.modelHeader1{
 			padding: 0.15rem 0rem;
@@ -322,8 +322,10 @@
 		}
 		.modelHeader2{
 			padding: 0.15rem 0rem;
-			color: #FFF;
-			font-size: 0.18rem;
+		    color: #000;
+		    font-size: 0.18rem;
+		    background-color: #FFF;
+		    text-align: center;
 		}
 		.close1{
 			cursor: pointer;
@@ -335,9 +337,9 @@
 		.close2{
 			cursor: pointer;
 		    z-index: 100;
-		    width: 0.2rem;
-		    height: 0.2rem;
-		    display: inline-block;
+		    display: block;
+		    width: 0.3em;
+		    height: 0.3rem;
 		}
 		.box1{
 			width: auto;
@@ -358,7 +360,7 @@
 			height:auto;
 			z-index: 100;
 			position: fixed;
-			top: 50%;
+			top: 45%;
 			left: 50%;
 			webkit-transform: translateX(-50%) translateY(-50%);
 			-moz-transform: translateX(-50%) translateY(-50%);
@@ -366,6 +368,8 @@
 			transform: translateX(-50%) translateY(-50%);
 			background-color: transparent;
 			display: none;
+		    border-radius: 0.1rem;
+			overflow: hidden;
 		}
 		.modelContentInfo1{
 			width: 70vw;
@@ -388,6 +392,7 @@
 			margin: 0px auto;
 			padding: 0.15rem 0rem;
 			font-size: 0.12rem;
+			text-align: left;
 		}
 		.modelContentBtn{
 			width: 60vw;
@@ -679,8 +684,13 @@
 						<div class="medicalNameCenter">
 							<div class="medicalNameCenterBox">
 								<div class="medicalNameCenterBoxTop">
-									<label  class="medicalNameCenterBoxTopName">多肿瘤标志物，肿瘤补充套餐</label>
-									<img src="wechatImg/explain.png" class="medicalNameCenterBoxTopDes" title="肝癌、食管癌、前列腺癌、膀胱癌等...">
+									<label  class="medicalNameCenterBoxTopName">多肿瘤标志物</label>
+									<img src="wechatImg/explain.png" class="medicalNameCenterBoxTopDes" title="可选。toggle函数执行完之后，要执行的函数。
+　　如需学习更多有关callback的内容，请访问我们的jQuery Callback这一章。
+　　除非设置了speed参数，否则不能设置该参数。可选。toggle函数执行完之后，要执行的函数。
+　　如需学习更多有关callback的内容，请访问我们的jQuery Callback这一章。
+　　除非设置了speed参数，否则不能设置该参数。可选。toggle函数执行完之后，要执行的函数。
+　　如需学习更多有关callback的内容，请访问我们的jQuery Callback这一章。">
 								</div>
 								<span class="medicalNameCenterBoxDesText">肝癌、食管癌、前列腺癌、膀胱癌等...</span>
 							</div>
@@ -803,15 +813,22 @@
 	</div>
 
 	<div class="box2">
+		<div class="closeModel2">
+				<img src="wechatImg/x.png" height="30" width="30" alt="&times" class="close2">
+			</div>
 		<div class="modelHeader2">
 			<span style="display:inline-block;" id="box2Header">关于基础检查服务</span>
-			<div class="closeModel2">
-				<img src="wechatImg/close.png" height="30" width="30" alt="&times" class="close2">
-			</div>
+			
 		</div>
     	<div class="modelContent2">
 			<div class="modelContentInfo2 text-center">
-				<span id="ContentInfo2">常规检查</span>
+				<span id="ContentInfo2">可选。toggle函数执行完之后，要执行的函数。
+　　如需学习更多有关callback的内容，请访问我们的jQuery Callback这一章。
+　　除非设置了speed参数，否则不能设置该参数。可选。toggle函数执行完之后，要执行的函数。
+　　如需学习更多有关callback的内容，请访问我们的jQuery Callback这一章。
+　　除非设置了speed参数，否则不能设置该参数。可选。toggle函数执行完之后，要执行的函数。
+　　如需学习更多有关callback的内容，请访问我们的jQuery Callback这一章。
+　　</span>
 			</div>
     	</div>
 	</div>
