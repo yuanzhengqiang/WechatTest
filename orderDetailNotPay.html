@@ -454,7 +454,7 @@
 		    if (!doc.addEventListener) return;
 		    win.addEventListener(resizeEvt, recalc, false);
 		    doc.addEventListener('DOMContentLoaded', recalc, false);
-		    
+		    alert(1)
 		    // 一物理像素在不同屏幕的显示效果不一样。要根据devicePixelRatio来修改meta标签的scale,要注释上面的meta标签
 		    (function(){
 		        return;
