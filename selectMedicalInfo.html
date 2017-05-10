@@ -848,9 +848,9 @@
 			$(".box2").css("display","block");
 			return false;
 		});
-		$(".medicalNameCenterBoxTopDes").click(function(){
-			var title = $(this).attr("title");
-			var header = $(this).siblings('label').text();
+		$(".medicalNameCenterBox").click(function(){
+			var title = $(this).find('img').attr("title");
+			var header = $(this).find('label').text();
 			$("#box2Header").text("关于" + header);
 			$("#ContentInfo2").text(title);
 			$(".model").css("display","block");
@@ -876,12 +876,15 @@
 		});
 
 		//选择
-		$(".notSelect").on('click', function() {
+		$(".medicalNameLeft").on('click', function() {
+			$(this).find("img").toggle();
+		});
+		/*$(".notSelect").on('click', function() {
 			$(this).hide().siblings('.selected').show();
-		});	
+		});
 		$(".selected").on('click', function() {
 			$(this).hide().siblings('.notSelect').show();
-		});		
+		});		*/
 		function turnPage(){
 			window.location.href="https://yuanzhengqiang.github.io/WechatTest/medicalInfo.html"; 
 		}
