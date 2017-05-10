@@ -437,6 +437,10 @@
 		.heightAuto{
 			height: auto;
 		}
+		.overflowH{
+			max-height: 2rem;
+    		overflow: hidden;
+		}
 	</style>
 
 </head>
@@ -576,7 +580,7 @@
 			</div>
 
 			<!-- 生成报告-未付款 -->
-			<div class="medicalInfo">
+			<div class="medicalInfo overflowH">
 				<div class="shade">
 					<img src="wechatImg/notPay.png" class="notPay">
 					<label class="notPayDes">支付成功后查看体检结论</label>
