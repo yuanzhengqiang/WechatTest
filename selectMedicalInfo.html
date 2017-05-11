@@ -859,8 +859,8 @@
 	<script type="text/javascript">
 		
 		$(".basisContentCenter").click(function(){
-			var title = $(this).attr("title");
-			var header = $(this).siblings('label').text();
+			var title = $(this).find('img').attr("title");
+			var header = $(this).find('label').text();
 			$("#box2Header").text("关于" + header);
 			$("#ContentInfo2").text(title);
 			$(".model").css("display","block");
