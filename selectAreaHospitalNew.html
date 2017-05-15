@@ -217,6 +217,19 @@
         .borderNone{
         	border: none;
         }
+        .weight100{
+        	font-weight: 100
+        }
+        .weight700{
+        	font-weight: 700
+        }
+        .heightTop{
+        	height: 0.25rem;
+    		top: 0.05rem;
+        }
+        .top005{
+			top: -0.05rem;
+        }
 	</style>
 </head>
 <body id="body" class="hide">
@@ -241,7 +254,7 @@
 		    	<div class="btn">
 		    		<span class="textInfo">地区</span>
 		    		<ul class="absolute hide">
-						<li><span class="liActive visibilityH"></span><span class="liText">上海</span></li>
+						<li><span class="liActive visibilityH"></span><span class="liText" style="top: -0.05rem;">上海</span></li>
 						<li><span class="liActive visibilityH"></span><span class="liText">浙江</span></li>
 						<li><span class="liActive visibilityH"></span><span class="liText">江苏</span></li>
 						<li><span class="liActive visibilityH"></span><span class="liText">安徽</span></li>
@@ -310,9 +323,18 @@
 		});
 
 		$("ul").on("click", "li", function(event){
+			if($(this).index() == 0) {
+				$(this).find('.liActive').addClass('heightTop');
+				$(this).find('.liText').addClass('top005');
+			} else {
+				$(this).find('.liActive').removeClass('heightTop');
+				$(this).find('.liText').removeClass('top005');
+			}
 			var name = $(this).find('.liText').text();
+			$(this).find('.liText').addClass('weight700').removeClass('weight100');
 			$(this).find('.liActive').addClass('visibilityV').removeClass('visibilityH');
 			$(this).siblings("li").find('.liActive').addClass('visibilityH').removeClass('visibilityV');
+			$(this).siblings("li").find('.liText').addClass('weight100').removeClass('weight700');
 			$(this).parents(".absolute").addClass('hide').removeClass('show').prev().text(name);
 			event.stopPropagation();
 			return false;
