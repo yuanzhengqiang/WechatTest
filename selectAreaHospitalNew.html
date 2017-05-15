@@ -287,6 +287,7 @@
 
 		$(".textInfo").click(function(event) {
 			$(this).next().addClass("show").removeClass("hide");
+			$(this).parents(".btn").siblings().find('.absolute').addClass("hide").removeClass("show");
 			event.stopPropagation();
 			return false;
 		});
