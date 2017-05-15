@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>选择地区医院</title>
+	<style>
+		html{
+			font-size: 100px;
+			height: 100%;
+		}
+        body{
+            padding:0;
+            margin:0;
+            width: 100%;
+            height: 100%;
+        }
+		.container-fluid {
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+            height: 100%;
+		}
+		.text-left {
+			text-align: left;
+		}
+		.text-right {
+			text-align: right;
+		}
+		.text-center {
+			text-align: center;
+		}
+		button:active {
+            box-shadow: 0.02rem 0.03rem 0.1rem #235189;
+        }
+		.margin0{
+			margin:0px;
+		}
+		
+		.inlineBlock{
+			display:inline-block;
+		}
+		.header{
+			background-color: transparent;
+			padding: 0rem 0.15rem;
+			height: 0.32rem;
+			display:flex;
+			display:-webkit-flex;
+		}
+		.headerItem1{
+			flex:1;
+			display: inline-block;
+			position: relative;
+		}
+		.headerItem3{
+			flex:3;
+			color: #FFF;
+			font-size: 0.16rem;
+			margin-bottom: 0px;
+			font-weight: 700;
+			display: inline-block;
+		}
+		.headerImg{
+			width: 0.2rem;
+			height: 0.2rem;
+			position: absolute;
+		    top: 50%;
+    		webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+		.headerName{
+			display: inline-block;
+		    letter-spacing: 0.03rem;
+		    line-height: 0.32rem;
+			height: 0.32rem;
+		}
+		.content{
+			height: 100%;
+			width: 100%;
+			background:-moz-linear-gradient(left,#8ACA38,#5FA835);
+			background:-webkit-linear-gradient(left,#8ACA38,#5FA835);
+			background:linear-gradient(left,#8ACA38,#5FA835);
+			background-image: url(wechatImg/firstBackground.jpg);
+            background-size: 100%;
+		}
+		.borderBottomNone{
+			border-bottom: transparent;
+		}
+		.block{
+			display: block;
+		}
+		.right0{
+			right:0;
+		}
+		.left0{
+			left:0;
+		}
+		.top11{
+			top: 0.11rem;
+		}
+		.payInfo{
+			height: auto;
+    		text-align: center;
+    		margin-top: 1.5rem;
+		}
+		.payStatus1{
+			color: #FFF;
+		    font-size: 0.12rem;
+		    margin-bottom: 0px;
+		    font-weight: 700;
+		    letter-spacing: 0.04rem;
+		    display: block;
+		}
+		.payStatus2{
+			color: #FFF;
+		    font-size: 0.102rem;
+		    letter-spacing: 0.02rem;
+		    display: block;
+		}
+		.btnGroup{
+			margin-top: 0.4rem; 
+		}
+		.btn{
+			height: 0.36rem;
+		    font-size: 0.16rem;
+		    margin: 0.2rem 0.5rem;
+		    border: 1px solid #FFF;
+		    background-color: transparent;
+		    border-radius: 8px;
+		    position: relative;
+		}
+		.textInfo{
+			height: 0.36rem;
+		    line-height: 0.36rem;
+		    color: #FFF;
+		    text-align: left;
+		    margin-left: 0.2rem;
+		    font-size: 0.12rem;
+		    display: block;
+		}
+		.hide{
+			display: none;
+		}
+		ul{
+			margin-top: 0.05rem;
+		    width: 1.82rem;
+		    height: auto;
+		    list-style: none;
+		    padding: 0rem 0.2rem;
+		    font-size: 0.12rem;
+		    line-height: 0.27rem;
+		    background-color: #FFF;
+		    border-radius: 0.08rem;
+		    z-index: 500;
+		    display: block;
+		    position: absolute;
+		    left: -0.01rem;
+		}
+		li{
+			border-bottom: 0.01rem solid #b5df91;
+			color: #7cbb44;
+    		font-weight: 100;
+    		height: 0.27rem;
+		}
+		li:active {
+            color: rgba(124, 187, 68, 0.8);
+            font-weight: 700;
+        }
+        .liActive{
+        	background-color: #5c93d7;
+		    width: 0.03rem;
+		    height: 0.27rem;
+		    display: inline-block;
+		    position: relative;
+		    left: -0.2rem;
+        }
+        .liText{
+        	position: relative;
+		    top: -0.08rem;
+		    left: -0.03rem;
+        }
+        .visibilityV{
+			visibility: visible;
+        }
+        .visibilityH{
+			visibility: hidden;
+        }
+        .show{
+        	display: block;
+        }
+        .btnDiv{
+        	height: 0.36rem;
+		    font-size: 0.16rem;
+		    margin: 0.2rem 0.5rem;
+		    background-color: transparent;
+		    position: relative;
+        }
+        .btnNext{
+        	background-color: #5c93d7;
+		    width: 100%;
+		    height: 0.36rem;
+		    border-radius: 8px;
+		    color: #FFF;
+		    box-shadow: 2px 4px 10px #6BB06D;
+		    outline: none;
+		    border: none;
+        }
+	</style>
+</head>
+<body id="body" class="hide">
+	<div class="container-fluid">
+		<div class="content">
+			<div class="header">
+		        <span class="headerItem1 text-left" style="visibility: hidden;">
+		            <img src="wechatImg/return.png" class="headerImg left0">
+		        </span>
+		        <span class="headerItem3 text-center" style="visibility: hidden;">
+		            <label class="headerName"></label>
+		        </span>  
+		        <span class="headerItem1 text-right">
+		            <img src="wechatImg/service.png" class = "headerImg right0">
+		        </span>
+		    </div>
+			<div class="payInfo">
+				<label class="payStatus1">SHENBIAN</label>
+				<label class="payStatus2">你的身边陪检服务</label>
+			</div>
+			<div class="btnGroup">
+		    	<div class="btn">
+		    		<span class="textInfo">地区</span>
+		    		<ul class="absolute hide">
+						<li><span class="liActive visibilityH"></span><span class="liText">上海</span></li>
+						<li><span class="liActive visibilityH"></span><span class="liText">浙江</span></li>
+						<li><span class="liActive visibilityH"></span><span class="liText">江苏</span></li>
+						<li><span class="liActive visibilityH"></span><span class="liText">安徽</span></li>
+						<li><span class="liActive visibilityH"></span><span class="liText">北京</span></li>
+					</ul>
+		    	</div>
+		    	<div class="btn">
+		    		<span class="textInfo">医院</span>
+		    		<ul class="absolute hide">
+						<li><span class="liActive visibilityH"></span><span class="liText">医院A</span></li>
+						<li><span class="liActive visibilityH"></span><span class="liText">医院B</span></li>
+						<li><span class="liActive visibilityH"></span><span class="liText">医院C</span></li>
+						<li><span class="liActive visibilityH"></span><span class="liText">医院D</span></li>
+						<li><span class="liActive visibilityH"></span><span class="liText">医院E</span></li>
+					</ul>
+		    	</div>
+		    	<div class="btnDiv">
+		    		<button class="btnNext">下 一 步</button>
+		    	</div>
+		    </div>
+		</div>
+	</div>
+	
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		(function (doc, win) {
+		    // 分辨率Resolution适配
+		    var docEl = doc.documentElement,
+		        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		        recalc = function () {
+		            var clientWidth = docEl.clientWidth;
+		            if (!clientWidth) return;
+		            docEl.style.fontSize = 100 * (clientWidth / 320) + 'px';
+		        };
+
+		    // Abort if browser does not support addEventListener
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		    // 一物理像素在不同屏幕的显示效果不一样。要根据devicePixelRatio来修改meta标签的scale,要注释上面的meta标签
+		    document.getElementById('body').removeAttribute('class','hide')
+		})(document, window);
+	</script>
+	<script type="text/javascript">
+		
+		$("body:not('ul')").click(function(event) {
+			$(".absolute").addClass('hide').removeClass('show');
+			console.log(1)
+			/* Act on the event */
+		});
+
+		$(".textInfo").click(function(event) {
+			$(this).next().addClass("show").removeClass("hide");
+			event.stopPropagation();
+			return false;
+		});
+
+		$("ul").on("click", "li", function(event){
+			var name = $(this).find('.liText').text();
+			$(this).find('.liActive').addClass('visibilityV').removeClass('visibilityH');
+			$(this).siblings("li").find('.liActive').addClass('visibilityH').removeClass('visibilityV');
+			$(this).parents(".absolute").addClass('hide').removeClass('show').prev().text(name);
+			event.stopPropagation();
+			return false;
+		});
+		
+	</script>
+	
+</body>
+</html>
